@@ -1,0 +1,181 @@
+\def\year{2017}\relax
+%File: formatting-instruction.tex
+\documentclass[letterpaper]{article}
+\usepackage{aaai17}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{times}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{mdwmath}
+\usepackage{mdwtab}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{pifont}
+\usepackage[noend]{algpseudocode}
+\usepackage{balance}
+\usepackage{bm}
+\usepackage{ulem}
+\usepackage{array}
+\usepackage{balance}
+\usepackage{multirow}
+\usepackage{multicol}
+\frenchspacing
+\setlength{\pdfpagewidth}{8.5in}
+\setlength{\pdfpageheight}{11in}
+\usepackage[marginal]{footmisc}
+%\pdfinfo{
+%/Title (Appendice)
+%}
+\setcounter{secnumdepth}{0}  
+ \begin{document}
+% The file aaai.sty is the style file for AAAI Press 
+% proceedings, working notes, and technical reports.
+%
+%\title{Appendice}
+%\author{
+%}
+%\maketitle
+
+\newtheorem{Theorem}{\bf{Theorem}}
+\newtheorem{Lemma}{\bf{Lemma}}
+
+
+\begin{Theorem}
+\label{theorem_vr_lower_bound}
+If $\gamma_t$ is $p$-dimensional, and can be denoted by  $\gamma_t = (a_t^1, a_t^2..., a_t^p)$. $\bar{a_j} = \sum\limits_{i=1}^p a_j^i$.  After $t$ iterations in the epoch, the distance $d_t$ holds that $d_t \ge p \eta^2\sum\limits_{j=1}^t a_j^2$ when the learning rate, i.e. $\eta_j$ with $j=1,2, ...m^s$ is a constant.
+\end{Theorem}
+\begin{proof}
+\begin{equation}
+\begin{array}{ll}
+d_{t} = \parallel \omega_{i_t}^s-\tilde{\omega}^s \parallel^2 \\
+=\parallel \omega_{i_{t-1}^s}-\eta_t \gamma_t^s -\tilde{\omega}^s \parallel^2\\
+=\parallel d_{t-1}-\eta_t \gamma_t^s \parallel^2\\
+= \parallel d_0 - \sum\limits_{j=1}^t \eta_j \gamma_j^s \parallel^2 \\
+=\parallel -\sum\limits_{j=1}^t \eta_j \gamma_j^s \parallel^2
+\end{array}
+\end{equation}. Since  $\mathbb{E}\gamma_t = \nabla F(\omega_{i_t}^s)$, $\mathbb{E}d_t = - \sum\limits_{j=1}^t \eta_j \nabla F(\omega_{i_t}^s)$ holds. Therefore, we obtain
+\begin{equation}
+\begin{array}{ll}
+d_{t} =  p \frac{\parallel  \sum\limits_{j=1}^t \eta_j \gamma_j^s  \parallel^2}{p} = p \frac{\sum\limits_{j=1}^t\sum\limits_{i=1}^p (\eta_j a_j^i)^2}{p} \\
+= p \sum\limits_{j=1}^t \eta_j^2 \frac{\sum\limits_{i=1}^p (a_j^i)^2}{p} \ge p \sum\limits_{j=1}^t \eta_j^2 \left(   \frac{\sum\limits_{i=1}^p a_j^i}{p}  \right)^2 \\
+\overset{\eta_j\mathrm{ =} \eta}{=}p \eta^2 \sum\limits_{j=1}^t (\bar{a_j})^2 
+\end{array}
+\end{equation}. The above inequality uses $\frac{x_1+x_2+, ..., +x_n}{n} \le \sqrt{\frac{x_1^2+x_2^2+, ..., +x_n^2}{n}}$. 
+\end{proof}
+
+\begin{Theorem}
+\label{theorem_converge}
+Assume the objective needs $s$ epochs to achieve to the $\epsilon$, and then the gradient complexity is $(1-\alpha)\left( m-\frac{1}{6} \frac{\log\frac{\alpha}{2}}{\rho_0^2} s(s+1)(2s+1) \right) + \alpha n$ atomic gradient computation.
+\end{Theorem}
+\begin{proof}
+The average atomic gradient for an epoch is denoted by $G_\mathrm{avg}$, and we obtain
+\begin{equation}
+\label{equa_gradient_complexity_1}
+\begin{array}{ll}
+G_s = (1-\alpha) k + \alpha n +m \\
+= -(1-\alpha) \frac{\log\frac{\alpha}{2}}{\rho^2} + \alpha n +m \\
+=- (1-\alpha)  \frac{\left(\log\frac{\alpha}{2}\right)s^2}{\rho_0^2} +\alpha n +m
+\end{array}
+\end{equation}. So the total gradient computation of all the $s$ epochs is $s(m+\alpha n)+(1-\alpha)\left( - \frac{\log\frac{\alpha}{2}s(s+1)(2s+1)}{6\rho_0^2} \right) $.
+
+If the $F(\tilde{\omega}^s)-F(\omega_\ast) \le \epsilon [\tilde{\omega}^0)-F(\omega_\ast)]$, then we obtain $\delta^s = \epsilon$, that is, $s=\ln \frac{\epsilon}{\delta}$. Therefore, the total  gradient complexity is 
+$(\ln \frac{\epsilon}{\delta})(m+\alpha n)+(1-\alpha)\left( - \frac{\log\frac{\alpha}{2}}{\rho_0^2} (\ln \frac{\epsilon}{\delta})(\ln \frac{\epsilon}{\delta}+1)(2\ln \frac{\epsilon}{\delta}+1)\right) $ atomic gradient computation. 
+
+\end{proof}
+
+\begin{Theorem}
+\label{theorem_gradient_complexity}
+Assume the objective needs $s$ epochs to achieve to the $\epsilon$, and then the gradient complexity is $(1-\alpha)\left( m-\frac{1}{6} \frac{\log\frac{\alpha}{2}}{\rho_0^2} s(s+1)(2s+1) \right) + \alpha n$ atomic gradient computation.
+\end{Theorem}
+\begin{proof}
+The average atomic gradient for an epoch is denoted by $G_\mathrm{avg}$, and we obtain
+\begin{equation}
+\label{equa_gradient_complexity_1}
+\begin{array}{ll}
+G_s = (1-\alpha) k + \alpha n +m \\
+= -(1-\alpha) \frac{\log\frac{\alpha}{2}}{\rho^2} + \alpha n +m \\
+=- (1-\alpha)  \frac{\left(\log\frac{\alpha}{2}\right)s^2}{\rho_0^2} +\alpha n +m
+\end{array}
+\end{equation}. So the total gradient computation of all the $s$ epochs is $s(m+\alpha n)+(1-\alpha)\left( - \frac{\log\frac{\alpha}{2}s(s+1)(2s+1)}{6\rho_0^2} \right) $.
+
+If the $F(\tilde{\omega}^s)-F(\omega_\ast) \le \epsilon [\tilde{\omega}^0)-F(\omega_\ast)]$, then we obtain $\delta^s = \epsilon$, that is, $s=\ln \frac{\epsilon}{\delta}$. Therefore, the total  gradient complexity is 
+$(\ln \frac{\epsilon}{\delta})(m+\alpha n)+(1-\alpha)\left( - \frac{\log\frac{\alpha}{2}}{\rho_0^2} (\ln \frac{\epsilon}{\delta})(\ln \frac{\epsilon}{\delta}+1)(2\ln \frac{\epsilon}{\delta}+1)\right) $ atomic gradient computation. 
+\end{proof}
+
+\begin{Lemma}
+\label{lemma_converge}
+$\omega_\ast$ denotes the optimum of the parameter.  $m^s$ can be large enough, so that $\delta = \frac{4 L \eta^2 m^s}{ \eta(1-2\eta L) m^s  -  \frac{1}{\gamma}    }     <1$, EstimateVR converges at the rate as follows:\\
+$F(\tilde{\omega}^{s+1}) - F(\omega_\ast)  \le \delta [F(\tilde{\omega}^s)-F(\omega_\ast)]+\frac{\delta}{2L}d^s $.
+\end{Lemma}
+\begin{proof}
+Construct an auxiliary function $h_i(\omega)=f_i(\omega)-f_i(\omega_\ast)-\nabla f_i(\omega_\ast)^\mathrm{T}(\omega-\omega_\ast)$, and $h_i(\omega_\ast)=\min\limits_\omega h_i(\omega)$ holds because of $\nabla h_i(\omega_\ast)=0$. Thus, $h_i(\omega_\ast)\le \min\limits_\eta [h_i(\omega-\eta \nabla h_i(\omega))]$ holds. That is,
+\begin{equation}
+\begin{array}{ll}
+h_i(\omega_\ast)\le \min\limits_\eta [h_i(\omega)-\eta \parallel \nabla h_i(\omega) \parallel^2+\frac{1}{2} L \eta^2 \parallel  \nabla h_i(\omega)  \parallel  )] \\
+=h_i(\omega)-\frac(1)(2L)\parallel  \nabla g_i(\omega) \parallel^2
+\end{array} 
+\end{equation}. That is, 
+$\parallel   \nabla f_i(\omega)  - \nabla f_i(\omega_\ast)   \parallel \le 2L [ f_i(\omega)  -  f_i(\omega_\ast)  -\nabla f_i(\omega_\ast)^{T}(\omega-\omega_\ast)  ]$. By summing the above inequality over $i=1,2, ..., n$, and using the fact that $\nabla F(\omega_\ast)=0$, we obtain
+\begin{equation}
+\begin{array}{ll}
+\frac{1}{n} \sum\limits_{i=1}^n \parallel  \nabla f_i(\omega)  - \nabla f_i(\omega_\ast)  \parallel^2  \le   2L [F(\omega)-F(\omega_\ast)] 
+\end{array} 
+\end{equation}. Let $v_{t+1}=\nabla f_{i_{t+1}}(\omega_{t}) - \nabla f_{i_{t_1}}(\tilde{\omega}^s)  + g^s+n^s$  during the $t+1_{th}$ round in the epoch of the $s_{th}$ iteration. Conditioned on $\omega_{t}$, $i_{t+1}$ is taken on the expectation, and we get 
+\begin{equation}
+\begin{array}{ll}
+\mathbb{E}\parallel  v_{t+1} \parallel^2  = \mathbb{E} \parallel \nabla f_{i_{t+1}}(\omega_{t}) - \nabla f_{i_{t+1}}(\tilde{\omega}^s)  + g^s + n^s \parallel\\
+\le 2\mathbb{E} \parallel \nabla f_{i_{t+1}}(\omega_{t}) - \nabla f_{i_{t+1}}(\omega_{\ast}) \parallel^2 + 2 \mathbb{E} \parallel  \nabla f_{i_{t+1}}(\tilde{\omega}^{s}) - \nabla f_{i_{t+1}}(\omega_{\ast}) - \nabla F(\tilde{\omega}^s)   + n^s  \parallel^2  \\
+\le 2\mathbb{E} \parallel \nabla f_{i_{t+1}}(\omega_{t}) - \nabla f_{i_{t+1}}(\omega_{\ast}) \parallel^2  + 4 \mathbb{E} \parallel  \nabla f_{i_{t+1}}(\tilde{\omega}^{s}) - \nabla f_{i_{t+1}}(\omega_{\ast}) - \nabla F(\tilde{\omega}^s) \parallel^2 + 4\mathbb{E} \parallel n^s  \parallel^2 \\ 
+=2\mathbb{E} \parallel \nabla f_{i_{t+1}}(\omega_{t}) - \nabla f_{i_{t+1}}(\omega_{\ast}) \parallel^2  + 4 \mathbb{E} \parallel  \nabla f_{i_{t+1}}(\tilde{\omega}^{s}) - \nabla f_{i_{t+1}}(\omega_{\ast}) - \nabla F(\tilde{\omega}^s) \parallel^2 + 4 d^s \\
+\le 2\mathbb{E} \parallel \nabla f_{i_{t+1}}(\omega_{t}) - \nabla f_{i_{t+1}}(\omega_{\ast}) \parallel^2  + 4 \mathbb{E} \parallel  \nabla f_{i_{t+1}}(\tilde{\omega}^{s}) - \nabla f_{i_{t+1}}(\omega_{\ast}) - \mathbb{E}\left ( \nabla f_{t+1}(\tilde{\omega}^s) - \nabla f_{t+1}(\omega_\ast)   \right)\parallel^2 + 4 d^s   \\
+\le 2\mathbb{E} \parallel \nabla f_{i_{t+1}}(\omega_{t}) - \nabla f_{i_{t+1}}(\omega_{\ast}) \parallel^2  + 4 \mathbb{E} \parallel  \nabla f_{i_{t+1}}(\tilde{\omega}^{s}) - \nabla f_{i_{t+1}}(\omega_{\ast}) \parallel^2 + 4 d^s\\
+\le 4L [F(\omega_t)-F(\omega_\ast)] + 8 L [F(\tilde{\omega}^s)-F(\omega_\ast)]+4d^s
+\end{array} 
+\end{equation}, because of holding that $\parallel  n^s  \parallel^2 = d^s$ in the third inequality, and $\mathbb{E}[\xi-\mathbb{E}\xi]^2 \le \mathbb{E}\xi^2$ in the fourth inequality.
+\begin{equation}
+\begin{array}{ll}
+\mathbb{E}\parallel  \omega_{t+1}-\omega_\ast \parallel^2=\parallel  \omega_{t}-\omega_\ast  \parallel^2  -2\eta(\omega_t-\omega_\ast)^\mathrm{T}\mathbb{E}v_t  +  \eta^2 \parallel  v_t  \parallel^2  \\
+\le \parallel  \omega_{t}-\omega_\ast  \parallel^2  -2\eta(\omega_t-\omega_\ast)^\mathrm{T}\nabla F(\omega_t) + \eta^2 \left(  4L [F(\omega_t)-F(\omega_\ast)] + 8 L [F(\tilde{\omega}^s)-F(\omega_\ast)]+4d^s \right)  \\ 
+\le \parallel  \omega_{t}-\omega_\ast  \parallel^2  -2\eta( F(\omega_t) - F(\omega_\ast) ) + \eta^2 \left(  4L [F(\omega_t)-F(\omega_\ast)] + 8 L[F(\tilde{\omega}^s)-F(\omega_\ast)]+4d^s \right)  \\ 
+= \parallel  \omega_{t}-\omega_\ast  \parallel^2  -2\eta(1-2\eta L) [F(\omega_t) - F(\omega_\ast) ] + 8 L \eta^2 [F(\tilde{\omega}^s)-F(\omega_\ast)]+4\eta^2 d^s
+\end{array} 
+\end{equation}. Summing the above inequality over $t={0,1, ..., m^s-1}$, we obtain
+\begin{equation}
+\begin{array}{ll}
+\mathbb{E}\parallel  \omega_{m^s}-\omega_\ast \parallel^2  \\
+\le \parallel  \omega_{0}-\omega_\ast  \parallel^2  -2\eta(1-2\eta L) \sum\limits_{i=0}^{m^s-1} [F(\omega_i) - F(\omega_\ast) ] + 8 L \eta^2 m^s [F(\tilde{\omega}^s)-F(\omega_\ast)]+4\eta^2 m^s d^s   \\ 
+\end{array} 
+\end{equation}. When $\tilde{\omega}^{s+1}$ is randomly identified from the sequence   $\{ \omega_0, ...,  \omega_{m^{s}-1}   \}$, $\mathbb{E}f_i(\omega_i) = F(\tilde{\omega}^s)$. Taking expectation on $t$, we obtain $\omega^{s+1}  = \mathbb{E} \omega_t$ with $t=\{0,1, ..., m^s   \}$
+\begin{equation}
+\begin{array}{ll}
+\mathbb{E}\parallel  \omega_{m^s}-\omega_\ast \parallel^2  + 2\eta(1-2\eta L) m^s [F(\tilde{\omega}^{s+1}) - F(\omega_\ast) ] \\
+\le \parallel  \omega_{0}-\omega_\ast  \parallel^2 + 8 L \eta^2 m^s [F(\tilde{\omega}^s)-F(\omega_\ast)]+4\eta^2 m^s d^s   \\ 
+= \parallel  \tilde{\omega}^{s+1}-\omega_\ast  \parallel^2 + 8 L \eta^2 m^s [F(\tilde{\omega}^s)-F(\omega_\ast)]+4\eta^2 m^s d^s   \\ 
+\le \frac{2}{\gamma}\parallel  F(\tilde{\omega}^{s+1} -  F(\omega_\ast))  \parallel^2 + 8 L \eta^2 m^s [F(\tilde{\omega}^s)-F(\omega_\ast)]+4\eta^2 m^s d^s
+\end{array} 
+\end{equation}. Thus, 
+\begin{equation}
+\begin{array}{ll}
+\left ( \eta(1-2\eta L) m^s  -  \frac{1}{\gamma}   \right  ) [F(\tilde{\omega}^{s+1}) - F(\omega_\ast) ] \\
+\le 4 L \eta^2 m^s [F(\tilde{\omega}^s)-F(\omega_\ast)]+2\eta^2 m^s d^s
+\end{array} 
+\end{equation}. That is, $
+F(\tilde{\omega}^{s+1}) - F(\omega_\ast)  \le \frac{4 L \eta^2 m^s}{ \eta(1-2\eta L) m^s  -  \frac{1}{\gamma}    } [F(\tilde{\omega}^s)-F(\omega_\ast)]+\frac{2\eta^2 m^s d^s}{\eta(1-2\eta L) m^s  -  \frac{1}{\gamma}   }
+$. Thus, the Lemma \ref{lemma_converge} have been proved.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
