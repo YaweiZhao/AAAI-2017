@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  23 AUG 2016 11:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  6 SEP 2016 16:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -350,11 +350,7 @@ Package footmisc Info: Declaring symbol style lamport* on input line 903.
 Package footmisc Info: Declaring symbol style lamport*-robust on input line 924
 .
 )
-(./support_materials.aux
-
-LaTeX Warning: Label `equa_gradient_complexity_1' multiply defined.
-
-)
+(./support_materials.aux)
 \openout1 = `support_materials.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
@@ -370,7 +366,8 @@ LaTeX Font Info:    ... okay on input line 34.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
 LaTeX Font Info:    ... okay on input line 34.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 34.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -435,136 +432,181 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@Theorem=\count137
-\c@Lemma=\count138
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
-LaTeX Font Info:    Try loading font information for U+msa on input line 49.
+\c@Assumption=\count138
+\c@Lemma=\count139
+\c@Corollary=\count140
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
+LaTeX Font Info:    Try loading font information for U+msa on input line 54.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 49.
+LaTeX Font Info:    Try loading font information for U+msb on input line 54.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
-\OT1/ptm/m/n/10 . The above in-equal-ity uses $[] \OMS/cmsy/m/n/10 ^^T
+<symbol_notations.pdf, id=1, 264.05348pt x 325.3194pt>
+File: symbol_notations.pdf Graphic file (type pdf)
+
+<use symbol_notations.pdf>
+Package pdftex.def Info: symbol_notations.pdf used on input line 57.
+(pdftex.def)             Requested size: 239.39438pt x 294.94406pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
+
+Underfull \hbox (badness 1132) in paragraph at lines 139--140
+[]\OT1/ptm/m/n/10 Given any two ar-bi-trary pa-ram-e-ters $\OML/cmm/m/it/10 ![]
+$ \OT1/ptm/m/n/10 and $\OML/cmm/m/it/10 ![]$\OT1/ptm/m/n/10 ,
+ []
+
+[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+ <./symbol_notations.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 167--172
+[]\OT1/ptm/m/n/10 Construct an aux-il-iary func-tion $\OML/cmm/m/it/10 h[]\OT1/
+cmr/m/n/10 (\OML/cmm/m/it/10 !\OT1/cmr/m/n/10 ) =
  []
 
 
-Underfull \hbox (badness 1596) in paragraph at lines 72--73
-\OT1/ptm/b/n/10 Theorem 2. \OT1/ptm/m/it/10 As-sume the ob-jec-tive needs $\OML
-/cmm/m/it/10 s$ \OT1/ptm/m/it/10 epochs to
+Underfull \hbox (badness 10000) in paragraph at lines 167--172
+\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 !\OT1/cmr/m/n/10 )[]\OML/
+cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 )[]\OMS/cms
+y/m/n/10 r\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ![]\OT1/cmr/m/n
+/10 )[](\OML/cmm/m/it/10 ![]![]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 , and $\OML/cm
+m/m/it/10 h[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 ) =
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 85--87
-\OT1/ptm/m/n/10 ob-tain $\OML/cmm/m/it/10 ^^N[] \OT1/cmr/m/n/10 = \OML/cmm/m/it
-/10 ^^O$\OT1/ptm/m/n/10 , that is, $\OML/cmm/m/it/10 s \OT1/cmr/m/n/10 = [] []$
-\OT1/ptm/m/n/10 . There-fore, the
+Underfull \hbox (badness 3838) in paragraph at lines 167--172
+[] \OML/cmm/m/it/10 h[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 !\OT1/cmr/m/n/10 )$ \O
+T1/ptm/m/n/10 holds be-cause of $\OMS/cmsy/m/n/10 r\OML/cmm/m/it/10 h[]\OT1/cmr
+/m/n/10 (\OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 ) = 0$\OT1/ptm/m/n/10 . Thus,
  []
 
 
-Underfull \hbox (badness 1917) in paragraph at lines 85--87
-\OT1/ptm/m/n/10 to-tal gra-di-ent com-plex-ity is $\OT1/cmr/m/n/10 ([] [])(\OML
-/cmm/m/it/10 m \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 n\OT1/cmr/m/n/10 ) + (1 \OMS
-/cmsy/m/n/10 ^^@
+Underfull \hbox (badness 1748) in paragraph at lines 167--172
+\OML/cmm/m/it/10 h[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 ) \OMS
+/cmsy/m/n/10 ^^T []\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 h[]\OT1/cmr/m/n/10 (\OML/c
+mm/m/it/10 ![]^^Q\OMS/cmsy/m/n/10 r\OML/cmm/m/it/10 h[]\OT1/cmr/m/n/10 (\OML/cm
+m/m/it/10 !\OT1/cmr/m/n/10 ))]$ \OT1/ptm/m/n/10 holds. Ac-cord-ing to
  []
 
 
-Underfull \hbox (badness 2119) in paragraph at lines 85--87
-\OML/cmm/m/it/10 \OT1/cmr/m/n/10 ) []$ \OT1/ptm/m/n/10 atomic gra-di-ent
+Underfull \hbox (badness 1117) in paragraph at lines 167--172
+\OT1/ptm/m/n/10 As-sump-tion 1[], we ob-tain $\OML/cmm/m/it/10 h[]\OT1/cmr/m/n/
+10 (\OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T []\OT1/cmr/m/n/1
+0 [\OML/cmm/m/it/10 h[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 !\OT1/cmr/m/n/10 )[]\O
+ML/cmm/m/it/10 ^^Q \OMS/cmsy/m/n/10 k
  []
 
 
-Underfull \hbox (badness 1596) in paragraph at lines 92--93
-\OT1/ptm/b/n/10 Theorem 3. \OT1/ptm/m/it/10 As-sume the ob-jec-tive needs $\OML
-/cmm/m/it/10 s$ \OT1/ptm/m/it/10 epochs to
+Underfull \hbox (badness 10000) in paragraph at lines 167--172
+\OMS/cmsy/m/n/10 r\OML/cmm/m/it/10 h[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 !\OT1/c
+mr/m/n/10 ) \OMS/cmsy/m/n/10 k[]$\OT1/ptm/m/n/10 . That is, $\OMS/cmsy/m/n/10 k
+ r\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 !\OT1/cmr/m/n/10 )[]\OM
+S/cmsy/m/n/10 r\OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ![]\OT1/cm
+r/m/n/10 ) \OMS/cmsy/m/n/10 k[]^^T
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 105--107
-\OT1/ptm/m/n/10 ob-tain $\OML/cmm/m/it/10 ^^N[] \OT1/cmr/m/n/10 = \OML/cmm/m/it
-/10 ^^O$\OT1/ptm/m/n/10 , that is, $\OML/cmm/m/it/10 s \OT1/cmr/m/n/10 = [] []$
-\OT1/ptm/m/n/10 . There-fore, the
+Underfull \hbox (badness 10000) in paragraph at lines 167--172
+\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 L\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 f[]\OT1/cm
+r/m/n/10 (\OML/cmm/m/it/10 !\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 f[]\OT1/cmr/m/n
+/10 (\OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 )[]\OMS/cmsy/m/n/10 r\OML/cmm/m/it/10 
+f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 )[](\OML/cmm/m/it/10 ![
+]![]\OT1/cmr/m/n/10 )]$\OT1/ptm/m/n/10 . By sum-
  []
 
 
-Underfull \hbox (badness 1917) in paragraph at lines 105--107
-\OT1/ptm/m/n/10 to-tal gra-di-ent com-plex-ity is $\OT1/cmr/m/n/10 ([] [])(\OML
-/cmm/m/it/10 m \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 n\OT1/cmr/m/n/10 ) + (1 \OMS
-/cmsy/m/n/10 ^^@
+Underfull \hbox (badness 6691) in paragraph at lines 167--172
+\OT1/ptm/m/n/10 ming this in-equal-ity over $\OML/cmm/m/it/10 i \OT1/cmr/m/n/10
+ = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/
+cmm/m/it/10 ; :::; n\OMS/cmsy/m/n/10 g$\OT1/ptm/m/n/10 , and
  []
 
 
-Underfull \hbox (badness 2119) in paragraph at lines 105--107
-\OML/cmm/m/it/10 \OT1/cmr/m/n/10 ) []$ \OT1/ptm/m/n/10 atomic gra-di-ent
+Underfull \hbox (badness 10000) in paragraph at lines 167--172
+\OT1/ptm/m/n/10 us-ing the fact that $\OMS/cmsy/m/n/10 r\OML/cmm/m/it/10 F\OT1/
+cmr/m/n/10 (\OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 ) = 0$\OT1/ptm/m/n/10 , we ob-t
+ain
  []
 
 
-Overfull \hbox (17.01921pt too wide) detected at line 121
+Overfull \hbox (16.4866pt too wide) detected at line 188
 []
  []
 
 
-Overfull \hbox (228.74046pt too wide) detected at line 138
-[]
+Underfull \hbox (badness 1960) in paragraph at lines 188--189
+\OT1/ptm/m/n/10 , ac-cord-ing to Lemma 1[] in the third in-equal-ity, and
  []
 
 
-Overfull \hbox (166.74774pt too wide) detected at line 146
-[]
- []
-
-[1
+Underfull \vbox (badness 1292) has occurred while \output is active []
 
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (154.49625pt too wide) detected at line 152
-[]
+Underfull \hbox (badness 10000) in paragraph at lines 222--225
+\OT1/ptm/m/n/10 . That is, $\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 ([])[]\OML/cmm/m/
+it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 
+^^T
  []
 
 
-Overfull \hbox (51.676pt too wide) detected at line 160
-[]
+Underfull \hbox (badness 10000) in paragraph at lines 222--225
+[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 ([])[]\OML/cmm/m/it/10 F\O
+T1/cmr/m/n/10 (\OML/cmm/m/it/10 ![]\OT1/cmr/m/n/10 )]$\OT1/ptm/m/n/10 . Thus, t
+he The-o-rem 2[]
  []
 
-[2
 
-] (./support_materials.aux)
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
+\OT1/ptm/b/n/10 Theorem 3. \OT1/ptm/m/sc/10 sam-pleVR \OT1/ptm/m/it/10 re-quire
+s at least
+ []
 
-LaTeX Warning: There were multiply-defined labels.
 
- ) 
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
+[]\OML/cmm/m/it/10 m[] []$ \OT1/ptm/m/it/10 atomic gra-di-ent
+ []
+
+
+Underfull \hbox (badness 8094) in paragraph at lines 230--231
+\OT1/ptm/m/it/10 cal-cu-la-tions with $\OML/cmm/m/it/10 ^^N \OT1/cmr/m/n/10 = [
+]$ \OT1/ptm/m/it/10 to achieve
+ []
+
+[2] (./support_materials.aux) ) 
 Here is how much of TeX's memory you used:
- 4052 strings out of 493089
- 54960 string characters out of 6134842
- 139191 words of memory out of 5000000
- 7419 multiletter control sequences out of 15000+600000
- 13787 words of font info for 40 fonts, out of 8000000 for 9000
+ 4085 strings out of 493089
+ 55435 string characters out of 6134842
+ 136206 words of memory out of 5000000
+ 7447 multiletter control sequences out of 15000+600000
+ 17644 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,10n,26p,415b,228s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/
-texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
-e1/urw/times/utmri8a.pfb>
-Output written on support_materials.pdf (2 pages, 148543 bytes).
+ 38i,10n,26p,475b,251s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dv
+ips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on support_materials.pdf (2 pages, 571634 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 52 compressed objects within 1 object stream
+ 118 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

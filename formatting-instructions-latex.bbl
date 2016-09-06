@@ -1,0 +1,104 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Allen-Zhu and Hazan}{2016}]{AllenZhu:2016up}
+Allen-Zhu, Z., and Hazan, E.
+\newblock 2016.
+\newblock Variance reduction for faster non-convex optimization.
+\newblock {\em arXiv preprint arXiv:1603.05643}.
+
+\bibitem[\protect\citeauthoryear{Allen-Zhu and Yuan}{2015a}]{Allen2015Improved}
+Allen-Zhu, Z., and Yuan, Y.
+\newblock 2015a.
+\newblock Improved svrg for non-strongly-convex or sum-of-non-convex
+  objectives.
+\newblock {\em arXiv preprint arXiv:1506.01972}.
+
+\bibitem[\protect\citeauthoryear{Allen-Zhu and Yuan}{2015b}]{Allen2015UniVR}
+Allen-Zhu, Z., and Yuan, Y.
+\newblock 2015b.
+\newblock Univr: A universal variance reduction framework for proximal
+  stochastic gradient method.
+\newblock {\em arXiv preprint arXiv:1506.01972}.
+
+\bibitem[\protect\citeauthoryear{Allen-Zhu}{2016}]{Allenzhu2016Katyusha}
+Allen-Zhu, Z.
+\newblock 2016.
+\newblock Katyusha: Accelerated variance reduction for faster sgd.
+\newblock {\em arXiv preprint arXiv:1603.05953}.
+
+\bibitem[\protect\citeauthoryear{Defazio, Bach, and
+  Lacoste-Julien}{2014}]{Defazio:2014vu}
+Defazio, A.; Bach, F.; and Lacoste-Julien, S.
+\newblock 2014.
+\newblock Saga: A fast incremental gradient method with support for
+  non-strongly convex composite objectives.
+\newblock In {\em Advances in Neural Information Processing Systems},
+  1646--1654.
+
+\bibitem[\protect\citeauthoryear{Johnson and Zhang}{2013}]{Johnson:9MAvkbgy}
+Johnson, R., and Zhang, T.
+\newblock 2013.
+\newblock Accelerating stochastic gradient descent using predictive variance
+  reduction.
+\newblock {\em Advances in Neural Information Processing Systems}  315--323.
+
+\bibitem[\protect\citeauthoryear{Kone{\v{c}}n{\`y} and
+  Richt{\'a}rik}{2013}]{Richtarik:2013te}
+Kone{\v{c}}n{\`y}, J., and Richt{\'a}rik, P.
+\newblock 2013.
+\newblock Semi-stochastic gradient descent methods.
+\newblock {\em arXiv preprint arXiv:1312.1666}.
+
+\bibitem[\protect\citeauthoryear{Kone{\v{c}}n{\`y} \bgroup et al\mbox.\egroup
+  }{2016}]{Liu:2015bx}
+Kone{\v{c}}n{\`y}, J.; Liu, J.; Richt{\'a}rik, P.; and Tak{\'a}{\v{c}}, M.
+\newblock 2016.
+\newblock Mini-batch semi-stochastic gradient descent in the proximal setting.
+\newblock {\em IEEE Journal of Selected Topics in Signal Processing}
+  10(2):242--255.
+
+\bibitem[\protect\citeauthoryear{Li \bgroup et al\mbox.\egroup
+  }{2016}]{Li:2016vh}
+Li, X.; Zhao, T.; Arora, R.; Liu, H.; and Haupt, J.
+\newblock 2016.
+\newblock Stochastic variance reduced optimization for nonconvex sparse
+  learning.
+\newblock {\em arXiv preprint arXiv:1605.02711}.
+
+\bibitem[\protect\citeauthoryear{Schmidt, Roux, and
+  Bach}{2013}]{Schmidt:2013ui}
+Schmidt, M.; Roux, N.~L.; and Bach, F.
+\newblock 2013.
+\newblock Minimizing finite sums with the stochastic average gradient.
+\newblock {\em arXiv preprint arXiv:1309.2388}.
+
+\bibitem[\protect\citeauthoryear{Shah \bgroup et al\mbox.\egroup
+  }{2016}]{Shah2016Trading}
+Shah, V.; Asteris, M.; Kyrillidis, A.; and Sanghavi, S.
+\newblock 2016.
+\newblock Trading-off variance and complexity in stochastic gradient descent.
+\newblock {\em arXiv preprint arXiv:1603.06861}.
+
+\bibitem[\protect\citeauthoryear{Shalev-Shwartz}{2015}]{ShalevShwartz:2015vw}
+Shalev-Shwartz, S.
+\newblock 2015.
+\newblock Sdca without duality.
+\newblock {\em arXiv preprint arXiv:1502.06177}.
+
+\bibitem[\protect\citeauthoryear{Xiao and Zhang}{2014}]{Xiao:2014vw}
+Xiao, L., and Zhang, T.
+\newblock 2014.
+\newblock A proximal stochastic gradient method with progressive variance
+  reduction.
+\newblock {\em SIAM Journal on Optimization} 24(4):2057--2075.
+
+\bibitem[\protect\citeauthoryear{Zhang, Mahdavi, and
+  Jin}{2013}]{Zhang2013Linear}
+Zhang, L.; Mahdavi, M.; and Jin, R.
+\newblock 2013.
+\newblock Linear convergence with condition number independent access of full
+  gradients.
+\newblock In {\em Advances in Neural Information Processing Systems},
+  980--988.
+
+\end{thebibliography}
