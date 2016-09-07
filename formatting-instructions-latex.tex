@@ -71,7 +71,7 @@ To keep the paper reasonably concise, a list of symbols   used in the paper and 
 
 \section{Related work}
 \label{sect_related_work}
-Various variants of  SGD with the variance reduction technique have been proposed, including SAG \cite{Schmidt:2013ui}, SAGA \cite{Defazio:2014vu}, SDCA \cite{ShalevShwartz:2015vw}, and SVRG \cite{Johnson:9MAvkbgy} and its variants and so on. It is noting that SAG, SAGA and SDCA adopt different variance reduction techniques from SVRG and its variants. Although variance reduction techniques used in SAG, SAGA and SDCA are competitive with that of SVRG and its variants,  this paper focuses on the variance reduction technique used in SVRG and its variants. To the best of our knowledge,  the variants of SVRG includes S2GD \cite{Richtarik:2013te}, mS2GD \cite{Liu:2015bx}, EMGD \cite{Zhang2013Linear}, SVR-GHT \cite{Li:2016vh}, Prox-SVRG \cite{Xiao:2014vw}, SVRG++ \cite{Allen2015Improved}, and \textsc{CheapSVRG} \cite{Shah2016Trading}. 
+Various variants of  SGD with the variance reduction technique have been proposed, including SAG \cite{Schmidt:2013ui}, SAGA \cite{Defazio:2014vu}, SDCA \cite{ShalevShwartz:2016vy}, and SVRG \cite{Johnson:9MAvkbgy} and its variants and so on. It is noting that SAG, SAGA and SDCA adopt different variance reduction techniques from SVRG and its variants. Although variance reduction techniques used in SAG, SAGA and SDCA are competitive with that of SVRG and its variants,  this paper focuses on the variance reduction technique used in SVRG and its variants. To the best of our knowledge,  the variants of SVRG includes S2GD \cite{Richtarik:2013te}, mS2GD \cite{Liu:2015bx}, EMGD \cite{Zhang2013Linear}, SVR-GHT \cite{Li:2016vh}, Prox-SVRG \cite{Xiao:2014vw}, SVRG++ \cite{Allen2015Improved}, and \textsc{CheapSVRG} \cite{Shah2016Trading}. 
 
 Zeyuan et al. have presented an upper bound of the variance caused by the stochastic gradients when using the variance reduction technique \cite{AllenZhu:2016up}. Such upper bound of the variance is subject to  many simplifications. Our analysis about the variance is a complement to that work, which is obtained in general settings, and does not require the simplifications assumed in that work. Vatsal et al. have proposed \textsc{CheapSVRG} which uses sampled instances to estimate the full gradient \cite{Shah2016Trading}. The number of those sampled instances is a parameter which needs to be identified before running of \textsc{CheapSVRG}. Comparing with \textsc{CheapSVRG}, our proposed algorithm, i.e. \textsc{sampleVR} does not need to tune extra parameters. Additionally, although both \textsc{CheapSVRG} and \textsc{sampleVR} can achieve a linear convergence rate, the analysis of \textsc{CheapSVRG} is obtained with two extra strong assumptions, which are not required in \textsc{sampleVR}. Furthermore, extensive empirical studies show that  \textsc{sampleVR} outperforms \textsc{CheapSVRG} significantly.
  
@@ -84,6 +84,7 @@ Zeyuan et al. have presented an upper bound of the variance caused by the stocha
 \begin{table*}[!]
 \caption{Variants of SVRG can be unified by the general framework EUI when the functions $\mathcal{E}$, $\mathcal{U}$ and $\mathcal{I}$ are implemented. }
 \label{table_EUI_example}
+\centering
 \begin{threeparttable}
 \begin{tabular}{|>{\raggedright}p{0.4cm}|>{\centering}p{3.6cm}|c|c|c|c|c|}
 \hline 
@@ -91,18 +92,19 @@ Zeyuan et al. have presented an upper bound of the variance caused by the stocha
 \cline{2-7} 
  & SVRG & S2GD & EMGD & SVR-GHT & Prox-SVRG & SVRG++\tabularnewline
 \hline 
-$\mathcal{E}$ & $m_s=C$ & $P(m_s)=\frac{(1-\check{\mu}\eta)^{M-t}}{\sum\limits_{t=1}^M(1-\check{\mu}\eta)^{M-t}}$ & $m_s=C$ & $m_s=C$ & $m_s=C$ & $m_s=2^sC$\tabularnewline
+$\mathcal{E}$ & $m_s\mathrm{=}C$ &  $P(m_s\mathrm{=}t)\mathrm{=}\frac{\phi(t)}{\sum\limits_{t=1}^M \phi(t)}$ \tnote{\dag} & $m_s\mathrm{=}C$ & $m_s\mathrm{=}C$ & $m_s\mathrm{=}C$ & $m_s\mathrm{=}2^sC$\tabularnewline
 \hline 
-$\mathcal{U}$ & $\omega_t-\eta\gamma_t$ & $\omega_t-\eta\gamma_t$ & $\omega_t-
-\mathbb{B}_{\Delta_t}(\eta\gamma_t)$ & $\mathcal{H}_k(\omega_t-\eta\gamma_t)$ & $\omega_t-\eta\gamma_t$ \tnote{\dag}& $\omega_t-\eta\gamma_t$ \tnote{\dag} \tabularnewline
+$\mathcal{U}$ & $\omega_t\mathrm{-}\eta\gamma_t$ & $\omega_t\mathrm{-}\eta\gamma_t$ & $\omega_t\mathrm{-}
+\mathbb{B}_{\Delta_t}(\eta\gamma_t)$ & $\mathcal{H}_k(\omega_t\mathrm{-}\eta\gamma_t)$ & $\omega_t\mathrm{-}\eta\gamma_t$ \tnote{\ddag}& $\omega_t\mathrm{-}\eta\gamma_t$ \tnote{\ddag} \tabularnewline
 \hline 
-\multirow{2}{0.4cm}{$\mathcal{I}$} &  randomly pick any of $\omega_j$ with $j\mathrm{\in}\{0,1, ..., m_s-1\}$  & \multirow{2}{*}{$\omega_{m_s}$} & \multirow{2}{*}{$\frac{1}{m_s+1}\sum\limits_{i=0}^{m_s}\omega_{i}$} & \multirow{2}{*}{$\omega_{m_s}$} & \multirow{2}{*}{$\frac{1}{m_s}\sum\limits_{i=1}^{m_s}\omega_{i}$} & \multirow{2}{*}{$\frac{1}{m_s}\sum\limits_{i=1}^{m_s}\omega_{i}$}\tabularnewline
+\multirow{2}{0.4cm}{$\mathcal{I}$} &  randomly pick any of $\omega_j$ with $j\mathrm{\in}\{0,1, ..., m_s\mathrm{-}1\}$  & \multirow{2}{*}{$\omega_{m_s}$} & \multirow{2}{*}{$\frac{1}{m_s+1}\sum\limits_{i=0}^{m_s}\omega_{i}$} & \multirow{2}{*}{$\omega_{m_s}$} & \multirow{2}{*}{$\frac{1}{m_s}\sum\limits_{i=1}^{m_s}\omega_{i}$} & \multirow{2}{*}{$\frac{1}{m_s}\sum\limits_{i=1}^{m_s}\omega_{i}$}\tabularnewline
 \cline{2-2} 
  & $\omega_{m_s}$ &  &  &  &  & \tabularnewline
 \hline 
 \end{tabular}
 \begin{tablenotes}\small
-\item[\dag] The update rules of Prox-SVRG and SVRG++ are presented in the setting of the differentiable optimisation objective. 
+\item[\dag] $\phi(t) \mathrm{=} (1\mathrm{-}\check{\mu}\eta)^{M-t}$. $P(m_s\mathrm{=}t)$ means the probability of $m_s\mathrm{=}t$, which shows that a large epoch size is used with a high probability.
+\item[\ddag] The update rules of Prox-SVRG and SVRG++ are presented in the setting of the differentiable optimisation objective. 
 \end{tablenotes}
 \end{threeparttable}
 \end{table*}
@@ -178,7 +180,7 @@ It is obvious that the difference among the update rule of SGD, GD and SVRG is t
 
 As demonstrated in Theorem \ref{theorem_vr_lower_bound}, the distance becomes large with a large learning rate $\eta$, a high dimension $p$, and iterative updates of the parameter. Given a specific machine learning task, if a constant learning rate is adopted, the variance is dominated by the  design of the epoch size $m_s$ and the update gradient, i.e.  $\gamma_t$.  
 
- As illustrated in Table \ref{table_EUI_example}, the epoch size, i.e. $m_s$ is designed as a constant in EMGD, SVR-GHT and Prox-SVRG, and designed as an ascending variable for  S2GD \footnote{S2GD adopts a large epoch size with a high probability.} and SVRG++.  It is noting that the design of an appropriate epoch size is not trivial. A large size of an epoch causes much variance due to the large distance according to Theorem \ref{theorem_vr_lower_bound}. However, a small epoch size means that more epochs are required to make the loss function converge within a given bound. Since the full gradient is  computed every epoch, a large amount of epochs  lead to a large number of gradient calculations which are very time-consuming.  
+ As illustrated in Table \ref{table_EUI_example}, the epoch size, i.e. $m_s$ is designed as a constant in EMGD, SVR-GHT and Prox-SVRG, and designed as an ascending variable for  S2GD and SVRG++.  It is noting that the design of an appropriate epoch size is not trivial. A large size of an epoch causes much variance due to the large distance according to Theorem \ref{theorem_vr_lower_bound}. However, a small epoch size means that more epochs are required to make the loss function converge within a given bound. Since the full gradient is  computed every epoch, a large amount of epochs  lead to a large number of gradient calculations which are very time-consuming.  
 
 The update rule has an immediately impact on the variance according to Theorem \ref{theorem_vr_lower_bound}. Most variants of SVRG including S2GD, Prox-SVRG, and SVRG++ adopt the same update rule with SVRG. EMGD updates the parameter within a decaying bound in the high dimensional space. The bound is decaying so that the value of parameters will not be changed sharply, which decreases the variance.  SVR-GHT is designed for a class of optimisation problems with cardinality constraints where there are at most $k$ non-zero entries in the optimal solution. SVR-GHT  introduces a hard-thresholding mechanism to update the parameter, which keeps the $k$ largest entries and sets other entries to zero. Benefiting from  the property of the optimisation objective, the variance of SVR-GHT is bounded.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  7 SEP 2016 16:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  7 SEP 2016 20:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -480,57 +480,56 @@ Underfull \vbox (badness 1400) has occurred while \output is active []
 ]
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 60.
+
+
+LaTeX Warning: Citation `ShalevShwartz:2016vy' on page 2 undefined on input lin
+e 74.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
-
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 84.
 
 
-Overfull \hbox (3.60895pt too wide) in paragraph at lines 90--90
+Overfull \hbox (3.60895pt too wide) in paragraph at lines 91--91
 []|\OT1/ptm/m/n/10 Na- 
  []
 
 
-Overfull \hbox (0.83891pt too wide) in paragraph at lines 90--90
+Overfull \hbox (0.83891pt too wide) in paragraph at lines 91--91
 \OT1/ptm/m/n/10 me|  
  []
 
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 95.
 
-Overfull \vbox (1.4237pt too high) detected at line 99
+Overfull \vbox (1.4237pt too high) detected at line 100
  []
 
 
-Overfull \vbox (1.4237pt too high) detected at line 99
+Overfull \vbox (1.4237pt too high) detected at line 100
  []
 
 
-Overfull \vbox (1.4237pt too high) detected at line 99
+Overfull \vbox (1.4237pt too high) detected at line 100
  []
 
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 105.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 106.
 
-Overfull \hbox (2.64487pt too wide) in paragraph at lines 88--108
-[] 
- []
-
-
-Underfull \hbox (badness 2020) in paragraph at lines 112--113
+Underfull \hbox (badness 2020) in paragraph at lines 114--115
 []\OT1/ptm/m/n/10 Table 1[] il-lus-trates that SVRG and its vari-ants can
  []
 
 
-Underfull \hbox (badness 2875) in paragraph at lines 112--113
+Underfull \hbox (badness 2875) in paragraph at lines 114--115
 \OMS/cmsy/m/n/10 I$ \OT1/ptm/m/n/10 are im-ple-mented. For ex-am-ple, the func-
 tion $\OMS/cmsy/m/n/10 E$ \OT1/ptm/m/n/10 in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
 []|   []\OT1/ptm/b/n/10 poch: \OT1/ptm/m/n/10 iden-tify the se-quence of epoch 
 size
  []
@@ -542,166 +541,172 @@ size
 \c@Assumption=\count140
  [3]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 190.
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 192.
 
-Underfull \hbox (badness 3895) in paragraph at lines 208--209
+Underfull \hbox (badness 3895) in paragraph at lines 210--211
 [] $[]$ \OT1/ptm/m/n/10 is iden-ti-fied by us-ing any of $\OML/cmm/m/it/10 ![]$
  \OT1/ptm/m/n/10 with
  []
 
-<figure_ijcnn_convergence.pdf, id=30, 578.16pt x 433.62pt>
+<figure_ijcnn_convergence.pdf, id=32, 578.16pt x 433.62pt>
 File: figure_ijcnn_convergence.pdf Graphic file (type pdf)
 
 <use figure_ijcnn_convergence.pdf>
-Package pdftex.def Info: figure_ijcnn_convergence.pdf used on input line 234.
+Package pdftex.def Info: figure_ijcnn_convergence.pdf used on input line 236.
 (pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
 
-<figure_colon-cancer_convergence.pdf, id=31, 578.16pt x 433.62pt>
+<figure_colon-cancer_convergence.pdf, id=33, 578.16pt x 433.62pt>
 File: figure_colon-cancer_convergence.pdf Graphic file (type pdf)
 
 <use figure_colon-cancer_convergence.pdf>
 Package pdftex.def Info: figure_colon-cancer_convergence.pdf used on input line
- 235.
+ 237.
 (pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
 
-<figure_duke_convergence.pdf, id=32, 578.16pt x 433.62pt>
+<figure_duke_convergence.pdf, id=34, 578.16pt x 433.62pt>
 File: figure_duke_convergence.pdf Graphic file (type pdf)
 
 <use figure_duke_convergence.pdf>
-Package pdftex.def Info: figure_duke_convergence.pdf used on input line 236.
+Package pdftex.def Info: figure_duke_convergence.pdf used on input line 238.
 (pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
 
-<figure_a9a_convergence.pdf, id=33, 578.16pt x 433.62pt>
+<figure_a9a_convergence.pdf, id=35, 578.16pt x 433.62pt>
 File: figure_a9a_convergence.pdf Graphic file (type pdf)
 
 <use figure_a9a_convergence.pdf>
-Package pdftex.def Info: figure_a9a_convergence.pdf used on input line 237.
+Package pdftex.def Info: figure_a9a_convergence.pdf used on input line 239.
 (pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
 
-<figure_ijcnn_rho.pdf, id=34, 578.16pt x 433.62pt>
+<figure_ijcnn_rho.pdf, id=36, 578.16pt x 433.62pt>
 File: figure_ijcnn_rho.pdf Graphic file (type pdf)
  <use figure_ijcnn_rho.pdf>
-Package pdftex.def Info: figure_ijcnn_rho.pdf used on input line 244.
+Package pdftex.def Info: figure_ijcnn_rho.pdf used on input line 246.
 (pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
 
-<figure_colon-cancer_rho.pdf, id=35, 578.16pt x 433.62pt>
+<figure_colon-cancer_rho.pdf, id=37, 578.16pt x 433.62pt>
 File: figure_colon-cancer_rho.pdf Graphic file (type pdf)
 
 <use figure_colon-cancer_rho.pdf>
-Package pdftex.def Info: figure_colon-cancer_rho.pdf used on input line 245.
+Package pdftex.def Info: figure_colon-cancer_rho.pdf used on input line 247.
 (pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
 
-<figure_duke_rho.pdf, id=36, 578.16pt x 433.62pt>
+<figure_duke_rho.pdf, id=38, 578.16pt x 433.62pt>
 File: figure_duke_rho.pdf Graphic file (type pdf)
  <use figure_duke_rho.pdf>
-Package pdftex.def Info: figure_duke_rho.pdf used on input line 246.
+Package pdftex.def Info: figure_duke_rho.pdf used on input line 248.
 (pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
 
-<figure_a9a_rho.pdf, id=37, 578.16pt x 433.62pt>
+<figure_a9a_rho.pdf, id=39, 578.16pt x 433.62pt>
 File: figure_a9a_rho.pdf Graphic file (type pdf)
  <use figure_a9a_rho.pdf>
-Package pdftex.def Info: figure_a9a_rho.pdf used on input line 247.
+Package pdftex.def Info: figure_a9a_rho.pdf used on input line 249.
 (pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
 \OT1/ptm/b/n/10 Theorem 3. \OT1/ptm/m/sc/10 sam-pleVR \OT1/ptm/m/it/10 re-quire
 s at least
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
 []\OML/cmm/m/it/10 m[] []$ \OT1/ptm/m/it/10 atomic gra-di-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
 \OT1/ptm/m/it/10 ent cal-cu-la-tions with $\OML/cmm/m/it/10 ^^N[][]$ \OT1/ptm/m
 /it/10 to achieve
  []
 
 
-Underfull \hbox (badness 1365) in paragraph at lines 284--286
+Underfull \hbox (badness 1365) in paragraph at lines 286--288
 []\OT1/ptm/m/n/10 As il-lus-trated in The-o-rem 2[] and The-o-rem 3[], \OT1/ptm
 /m/sc/10 sam-
  []
 
 
-Underfull \hbox (badness 1997) in paragraph at lines 284--286
+Underfull \hbox (badness 1997) in paragraph at lines 286--288
 \OT1/ptm/m/n/10 the gra-di-ent com-plex-ity of SVRG and its vari-ants is
  []
 
-[4] <figure_mg_convergence.pdf, id=41, 578.16pt x 433.62pt>
+
+Underfull \hbox (badness 1320) in paragraph at lines 286--288
+\OT1/ptm/m/n/10 2015). But, the gra-di-ent com-plex-ity of \OT1/ptm/m/sc/10 sam
+-pleVR \OT1/ptm/m/n/10 is
+ []
+
+[4] <figure_mg_convergence.pdf, id=44, 578.16pt x 433.62pt>
 File: figure_mg_convergence.pdf Graphic file (type pdf)
 
 <use figure_mg_convergence.pdf>
-Package pdftex.def Info: figure_mg_convergence.pdf used on input line 306.
+Package pdftex.def Info: figure_mg_convergence.pdf used on input line 308.
 (pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
 
-<figure_cpusmall_convergence.pdf, id=42, 578.16pt x 433.62pt>
+<figure_cpusmall_convergence.pdf, id=45, 578.16pt x 433.62pt>
 File: figure_cpusmall_convergence.pdf Graphic file (type pdf)
 
 <use figure_cpusmall_convergence.pdf>
-Package pdftex.def Info: figure_cpusmall_convergence.pdf used on input line 307
+Package pdftex.def Info: figure_cpusmall_convergence.pdf used on input line 309
 .
 (pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
 
-<figure_year_convergence.pdf, id=43, 578.16pt x 433.62pt>
+<figure_year_convergence.pdf, id=46, 578.16pt x 433.62pt>
 File: figure_year_convergence.pdf Graphic file (type pdf)
 
 <use figure_year_convergence.pdf>
-Package pdftex.def Info: figure_year_convergence.pdf used on input line 308.
+Package pdftex.def Info: figure_year_convergence.pdf used on input line 310.
 (pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
 
-<figure_space-ga_convergence.pdf, id=44, 578.16pt x 433.62pt>
+<figure_space-ga_convergence.pdf, id=47, 578.16pt x 433.62pt>
 File: figure_space-ga_convergence.pdf Graphic file (type pdf)
 
 <use figure_space-ga_convergence.pdf>
-Package pdftex.def Info: figure_space-ga_convergence.pdf used on input line 309
+Package pdftex.def Info: figure_space-ga_convergence.pdf used on input line 311
 .
 (pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
 
-<figure_mg_rho.pdf, id=45, 578.16pt x 433.62pt>
+<figure_mg_rho.pdf, id=48, 578.16pt x 433.62pt>
 File: figure_mg_rho.pdf Graphic file (type pdf)
  <use figure_mg_rho.pdf>
-Package pdftex.def Info: figure_mg_rho.pdf used on input line 318.
+Package pdftex.def Info: figure_mg_rho.pdf used on input line 320.
 (pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
 
-<figure_cpusmall_rho.pdf, id=46, 578.16pt x 433.62pt>
+<figure_cpusmall_rho.pdf, id=49, 578.16pt x 433.62pt>
 File: figure_cpusmall_rho.pdf Graphic file (type pdf)
 
 <use figure_cpusmall_rho.pdf>
-Package pdftex.def Info: figure_cpusmall_rho.pdf used on input line 319.
+Package pdftex.def Info: figure_cpusmall_rho.pdf used on input line 321.
 (pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
 
-<figure_year_rho.pdf, id=47, 578.16pt x 433.62pt>
+<figure_year_rho.pdf, id=50, 578.16pt x 433.62pt>
 File: figure_year_rho.pdf Graphic file (type pdf)
  <use figure_year_rho.pdf>
-Package pdftex.def Info: figure_year_rho.pdf used on input line 320.
+Package pdftex.def Info: figure_year_rho.pdf used on input line 322.
 (pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
 
-<figure_space-ga_rho.pdf, id=48, 578.16pt x 433.62pt>
+<figure_space-ga_rho.pdf, id=51, 578.16pt x 433.62pt>
 File: figure_space-ga_rho.pdf Graphic file (type pdf)
 
 <use figure_space-ga_rho.pdf>
-Package pdftex.def Info: figure_space-ga_rho.pdf used on input line 321.
+Package pdftex.def Info: figure_space-ga_rho.pdf used on input line 323.
 (pdftex.def)             Requested size: 119.69719pt x 89.77266pt.
 
-Underfull \hbox (badness 3138) in paragraph at lines 330--332
+Underfull \hbox (badness 3138) in paragraph at lines 332--334
 \OT1/ptm/m/n/10 The ex-ist-ing vari-ants of SGD with the vari-ance re-
  []
 
 
-Underfull \hbox (badness 2073) in paragraph at lines 330--332
+Underfull \hbox (badness 2073) in paragraph at lines 332--334
 \OT1/ptm/m/n/10 duc-tion tech-nique, in-clud-ing SVRG, S2GD, SVRG++,
  []
 
 
-Underfull \hbox (badness 1337) in paragraph at lines 330--332
+Underfull \hbox (badness 1337) in paragraph at lines 332--334
 \OT1/ptm/m/n/10 in-clud-ing ijcnn1, colon-cancer, duke-brease-cancer, a9a,
  []
 
 
-Underfull \hbox (badness 1371) in paragraph at lines 333--334
+Underfull \hbox (badness 1371) in paragraph at lines 335--336
 \OML/cmm/m/it/10 l\OT1/cmr/m/n/10 2$\OT1/ptm/m/n/10 -regularised lo-gis-tic re-
 gres-sion tasks on the datasets:
  []
@@ -774,36 +779,39 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4407 strings out of 493089
- 61824 string characters out of 6134842
- 141283 words of memory out of 5000000
- 7716 multiletter control sequences out of 15000+600000
+ 4408 strings out of 493089
+ 61841 string characters out of 6134842
+ 141256 words of memory out of 5000000
+ 7717 multiletter control sequences out of 15000+600000
  40546 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,15n,26p,2061b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,15n,26p,2061b,372s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/
 texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dis
-t/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/font
-s/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/ur
-w/times/utmri8a.pfb>
-Output written on formatting-instructions-latex.pdf (7 pages, 496467 bytes).
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times
+/utmri8a.pfb>
+Output written on formatting-instructions-latex.pdf (7 pages, 522213 bytes).
 PDF statistics:
- 1184 PDF objects out of 1200 (max. 8388607)
- 379 compressed objects within 4 object streams
+ 1196 PDF objects out of 1200 (max. 8388607)
+ 388 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
