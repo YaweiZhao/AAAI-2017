@@ -76,7 +76,7 @@
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="19" columns="2">
+<lyxtabular version="3" rows="21" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top" width="7cm">
@@ -124,7 +124,7 @@ $i,j,l$
 \begin_inset Text
 
 \begin_layout Plain Layout
-counter variables
+the counter variables
 \end_layout
 
 \end_inset
@@ -257,7 +257,22 @@ $i_t$
 \begin_inset Text
 
 \begin_layout Plain Layout
-the index of an instance which is sampled from training data randomly
+the index of an instance 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mathrm{<}x_{i_t},y_{i_t}
+\backslash
+mathrm{>}$
+\end_layout
+
+\end_inset
+
+ which is sampled randomly
 \end_layout
 
 \end_inset
@@ -307,6 +322,56 @@ status open
 
 $
 \backslash
+rho$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$[-
+\backslash
+rho, 
+\backslash
+rho]$ is the $(1
+\backslash
+mathrm{-}
+\backslash
+alpha)$-confidence interval
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
 delta$
 \end_layout
 
@@ -322,74 +387,6 @@ delta$
 
 \begin_layout Plain Layout
 the rate of convergence
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$
-\backslash
-epsilon,
-\backslash
-zeta,
-\backslash
-rho$
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-positive real numbers
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$
-\backslash
-nu$
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-the variance between the full gradient and its estimation
 \end_layout
 
 \end_inset
@@ -435,6 +432,58 @@ status open
 
 \begin_layout Plain Layout
 
+$
+\backslash
+omega, 
+\backslash
+tilde{
+\backslash
+omega}$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+omega$ is a parameter, and $
+\backslash
+tilde{
+\backslash
+omega}$ is its snapshot 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
 $d_t$
 \end_layout
 
@@ -449,20 +498,27 @@ $d_t$
 \begin_inset Text
 
 \begin_layout Plain Layout
-the Euclidean distance between the current parameter 
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-$
+$d_t=
 \backslash
-omega_t$
+parallel 
+\backslash
+omega_t-
+\backslash
+tilde{
+\backslash
+omega}_t 
+\backslash
+parallel^2$
 \end_layout
 
 \end_inset
 
- and its most recent snapshot
+ 
 \end_layout
 
 \end_inset
@@ -588,9 +644,7 @@ status open
 
 $
 \backslash
-check{
-\backslash
-mu}$
+gamma_t$
 \end_layout
 
 \end_inset
@@ -604,7 +658,30 @@ mu}$
 \begin_inset Text
 
 \begin_layout Plain Layout
-the lower bound of the strongly-convex coefficient of loss function in S2GD
+the update gradient for training parameters 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+omega_t$ with $t
+\backslash
+mathrm{
+\backslash
+in}
+\backslash
+{0,1, ..., 
+\backslash
+omega_{m_s-1}
+\backslash
+}$
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -620,7 +697,7 @@ status open
 
 \begin_layout Plain Layout
 
-$M$
+$m_s, m$
 \end_layout
 
 \end_inset
@@ -634,7 +711,7 @@ $M$
 \begin_inset Text
 
 \begin_layout Plain Layout
-the maximal epoch size in S2GD
+the epoch size
 \end_layout
 
 \end_inset
@@ -652,7 +729,7 @@ status open
 
 $
 \backslash
-Delta_s$
+eta$
 \end_layout
 
 \end_inset
@@ -666,7 +743,7 @@ Delta_s$
 \begin_inset Text
 
 \begin_layout Plain Layout
-the decaying positive real number in EMGD
+the constant learning rate
 \end_layout
 
 \end_inset
@@ -684,9 +761,9 @@ status open
 
 $
 \backslash
-mathbb{B}_{
+epsilon,
 \backslash
-Delta_s}$
+zeta$
 \end_layout
 
 \end_inset
@@ -700,28 +777,93 @@ Delta_s}$
 \begin_inset Text
 
 \begin_layout Plain Layout
+the positive real numbers
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
 $
-\backslash
-omega_{i_t}$ in EMGD is updated with $
 \backslash
 parallel 
 \backslash
-omega_{i_{t+1}}
+cdot 
 \backslash
-mathrm{-}
+parallel$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$2$-norm of a vector
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$g,
 \backslash
-omega_{i_{t}}
+dot{g}$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+the full gradient $g$ and its estimation $
 \backslash
-parallel 
-\backslash
-le 
-\backslash
-Delta_s$
+dot{g}$
 \end_layout
 
 \end_inset
@@ -744,7 +886,7 @@ status open
 
 $
 \backslash
-mathcal{H}_k$
+nu$
 \end_layout
 
 \end_inset
@@ -763,9 +905,11 @@ status open
 
 \begin_layout Plain Layout
 
-the largest $k$ elements of all dimensions of $
+$
 \backslash
-omega_{i_t}$ is kept and the other elements are set to be 0
+nu=
+\backslash
+dot{g}-g$
 \end_layout
 
 \end_inset

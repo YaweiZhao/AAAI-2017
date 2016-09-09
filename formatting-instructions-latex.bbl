@@ -3,8 +3,8 @@
 \bibitem[\protect\citeauthoryear{Allen-Zhu and Hazan}{2016}]{AllenZhu:2016up}
 Allen-Zhu, Z., and Hazan, E.
 \newblock 2016.
-\newblock {Variance Reduction for Faster Non-Convex Optimization}.
-\newblock In {\em ICML}.
+\newblock {Variance reduction for faster non-Convex optimization}.
+\newblock In {\em International Conference on Machine Learning}.
 
 \bibitem[\protect\citeauthoryear{Allen-Zhu and Yuan}{2015}]{Allen2015UniVR}
 Allen-Zhu, Z., and Yuan, Y.
@@ -16,14 +16,14 @@ Allen-Zhu, Z., and Yuan, Y.
 \bibitem[\protect\citeauthoryear{Allen-Zhu and Yuan}{2016}]{Allen2015Improved}
 Allen-Zhu, Z., and Yuan, Y.
 \newblock 2016.
-\newblock {Improved SVRG for Non-Strongly-Convex or Sum-of-Non-Convex
-  Objectives}.
-\newblock In {\em ICML}.
+\newblock {Improved SVRG for non-strongly-convex or sum-of-non-convex
+  objectives}.
+\newblock In {\em International Conference on Machine Learning}.
 
 \bibitem[\protect\citeauthoryear{Allen-Zhu}{2016}]{Allenzhu2016Katyusha}
 Allen-Zhu, Z.
 \newblock 2016.
-\newblock Katyusha: Accelerated variance reduction for faster sgd.
+\newblock Katyusha: accelerated rariance reduction for faster sgd.
 \newblock {\em arXiv preprint arXiv:1603.05953}.
 
 \bibitem[\protect\citeauthoryear{Defazio, Bach, and
@@ -61,9 +61,9 @@ Kone{\v{c}}n{\`y}, J.; Liu, J.; Richt{\'a}rik, P.; and Tak{\'a}{\v{c}}, M.
   }{2016}]{Li:2016vh}
 Li, X.; Zhao, T.; Arora, R.; Liu, H.; and Haupt, J.
 \newblock 2016.
-\newblock {Stochastic Variance Reduced Optimization for Nonconvex Sparse
-  Learning}.
-\newblock In {\em ICML}.
+\newblock {Stochastic variance reduced optimization for nonconvex sparse
+  learning}.
+\newblock In {\em International Conference on Machine Learning}.
 
 \bibitem[\protect\citeauthoryear{Schmidt, Roux, and
   Bach}{2016}]{Schmidt:2013ui}
@@ -78,6 +78,12 @@ Shah, V.; Asteris, M.; Kyrillidis, A.; and Sanghavi, S.
 \newblock 2016.
 \newblock Trading-off variance and complexity in stochastic gradient descent.
 \newblock {\em arXiv preprint arXiv:1603.06861}.
+
+\bibitem[\protect\citeauthoryear{Shalev-Shwartz}{2016}]{ShalevShwartz:2016vy}
+Shalev-Shwartz, S.
+\newblock 2016.
+\newblock {SDCA without duality, regularization, and individual convexity}.
+\newblock In {\em International Conference on Machine Learning}.
 
 \bibitem[\protect\citeauthoryear{Xiao and Zhang}{2014}]{Xiao:2014vw}
 Xiao, L., and Zhang, T.

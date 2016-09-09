@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  6 SEP 2016 16:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  8 SEP 2016 14:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -437,22 +437,23 @@ e
 \c@Corollary=\count140
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
-LaTeX Font Info:    Try loading font information for U+msa on input line 54.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 54.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-<symbol_notations.pdf, id=1, 264.05348pt x 325.3194pt>
+<symbol_notations.pdf, id=1, 262.78375pt x 301.05373pt>
 File: symbol_notations.pdf Graphic file (type pdf)
 
 <use symbol_notations.pdf>
 Package pdftex.def Info: symbol_notations.pdf used on input line 57.
-(pdftex.def)             Requested size: 239.39438pt x 294.94406pt.
+(pdftex.def)             Requested size: 239.39438pt x 274.25789pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 71.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 71.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
 
@@ -582,7 +583,7 @@ Underfull \hbox (badness 8094) in paragraph at lines 230--231
 Here is how much of TeX's memory you used:
  4085 strings out of 493089
  55435 string characters out of 6134842
- 136206 words of memory out of 5000000
+ 137206 words of memory out of 5000000
  7447 multiletter control sequences out of 15000+600000
  17644 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -603,10 +604,10 @@ fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfcc1000.pfb
 /usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local
 /texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on support_materials.pdf (2 pages, 571634 bytes).
+Output written on support_materials.pdf (2 pages, 543373 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
+ 107 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
