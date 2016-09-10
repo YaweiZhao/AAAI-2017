@@ -28,6 +28,7 @@
 \setlength{\pdfpagewidth}{8.5in}
 \setlength{\pdfpageheight}{11in}
 \usepackage[marginal]{footmisc}
+\usepackage{extarrows}
 
 \setcounter{secnumdepth}{0}  
  \begin{document}
@@ -129,8 +130,9 @@ Table \ref{table_EUI_example} illustrates that SVRG and  its variants can be uni
             \State $g=\frac{1}{n}\sum\limits_{i=1}^n\nabla f_i(\tilde{\omega}_s)$;
             \For {$t=0, ..., m_s\mathrm{-}1$}
                 \State pick an instance $\mathrm{<}x_{i_t}, y_{i_t}\mathrm{>}$ randomly;
-                \State  $v=\nabla f_{i_t}(\omega_{i_t})-\nabla f_{i_t}(\tilde{\omega}_s)$;
-                \State $\gamma_{t}=v+g$;
+                %\State  $v=\nabla f_{i_t}(\omega_{i_t})-\nabla f_{i_t}(\tilde{\omega}_s)$;
+                %\State $\gamma_{t}=v+g$;
+                \State $\gamma_{t}=\nabla f_{i_t}(\omega_{i_t})-\nabla f_{i_t}(\tilde{\omega}_s)+g$;
                 \State \textbf{\uline{U}pdate:} $\omega_{t+1}=\mathcal{U}(\eta, \omega_{t}, \gamma_{t})$;
             \EndFor
             \State \textbf{\uline{I}dentify:} $\tilde{\omega}_{s\mathrm{+}1}\mathrm{\leftarrow}\mathcal{I}(\omega_j)$ with $j\mathrm{\in}\{0,1, ..., m_s\}$;
@@ -209,11 +211,11 @@ The variance in the current epoch will be passed to the next epoch via the ident
             \State $\omega_0=\tilde{\omega}_s$;
             \For {$t=0,1, ..., m\mathrm{-}1$}
                 \State pick an instance $\mathrm{<}x_{i_t},y_{i_t}\mathrm{>}$ randomly;
-                \State  $v=\nabla f_{i_t}(\omega_t)-\nabla f_{i_t}(\tilde{\omega}_s)$;
-                \State $\gamma_{t}=v+\dot{g}$;
+                %\State  $v=\nabla f_{i_t}(\omega_t)-\nabla f_{i_t}(\tilde{\omega}_s)$;
+                %\State $\gamma_{t}=v+\dot{g}$;
+                \State $\gamma_{t}=\nabla f_{i_t}(\omega_t)-\nabla f_{i_t}(\tilde{\omega}_s)+\dot{g}$;
                 \State $\omega_{t+1} = \omega_t - \eta \gamma_{t}$;
             \EndFor
-            %\State $\tilde{\omega}_{s+1} = \omega_m$;
             \State $\tilde{\omega}_{s+1}$ is identified by using any of $\omega_{i}$ with $i\mathrm{\in}\{0,2, ..., m\mathrm{-}1\}$ randomly;
             \State $k=-\frac{s\log\frac{\alpha}{2}}{\epsilon}$;
             \State $\dot{g} =\frac{1}{k}\sum\limits_{j=1}^{k}\nabla f_{i_j}(\tilde{\omega}_{s+1})$;
@@ -228,11 +230,11 @@ Although  the variance reduction technique is effective for decreasing the varia
 \dot{\gamma_t}=\nabla f_{i_t}(\omega_{t})-\nabla f_{i_t}(\tilde{\omega})+\frac{1}{k}\sum\limits_{j=1}^k\nabla f_{i_j}(\tilde{\omega});
 \end{equation}
 
-Although the estimation of the full gradient, i.e. $\dot{g}$ is unbiased, the variance between $\dot{g}$ and $g$ impedes the convergence of the training loss, especially when the parameter gets close to the optimum. This problem is mitigated in \textsc{sampleVR} by increasing the number of the sampled instances  over epochs linearly.    In specific, according to Assumption \ref{assumption_liptchiz} and Assumption \ref{assumption_strongly_convex}, every stochastic gradient $\nabla f_i(\omega)$ with $i\in\{1,2, ..., n\}$ is bounded by a positive constant denoted by $C$, that is, $\parallel  \nabla f_i(\omega)  \parallel \le C$. Without loss of generality, suppose $\nabla f_{i}(\omega)$ with $i\in\{1,2, ..., n\}$ is $p$-dimensional, and can be  denoted by $\nabla f_{i}(\omega)=(b_{i1}, b_{i2}, ..., b_{ip})^{\mathrm{T}}$. Considering any two stochastic gradients, e.g. $\nabla f_i(\omega)$ and $\nabla f_j(\omega)$, we obtain: $\max\limits_{l} \parallel b_{il} -b_{jl}\parallel \mathrm{\le} \max\limits_{l} \left(\parallel b_{il}\parallel+\parallel b_{jl}\parallel\right) \mathrm{\le} 2C$ with $l\in\{1,2, ..., p\}$. The variance between the full gradient and its estimation is denoted by $\nu$ with $\nu = \dot{g}-\mathbb{E}(\dot{g}) = \frac{1}{k}\sum\limits_{i=1}^k\nabla f_i(\tilde{\omega}_{s+1}) - \frac{1}{n}\sum\limits_{i=1}^n\nabla f_i(\tilde{\omega}_{s+1})$. Generally, considering the $j_{th}$ entry of $\nu$,  we have $P( | \nu_j | \ge \rho) \le 2e^{\frac{-2k^2\rho^2}{4kC^2}} \le 2e^{\frac{-k\rho^2}{2C^2}}$, according to Hoeffding's inequality. Let $\alpha = P(| \nu_j | \ge \rho) =  P (\nu_j\notin [-\rho, \rho] ) \le 2e^{\frac{-k\rho^2}{2C^2}}$. Such the probability represents the level of significance, i.e. $\alpha$   for a confidence interval  around the expectation of $\dot{g}$ of size $2\rho$. Let $\epsilon = \frac{\rho^2}{2C^2}$. If we require at least $k$ sampled instances  to acquire $(1\mathrm{-}\alpha)$-confidence interval $[-\rho, \rho]$,  $k$ should satisfy
+We illustrate Assumption \ref{assumption_liptchiz} and Assumption \ref{assumption_strongly_convex} for analysis, which are basic and used in SVRG and its variants. Although the estimation of the full gradient, i.e. $\dot{g}$ is unbiased, the variance between $\dot{g}$ and $g$ impedes the convergence of the training loss, especially when the parameter gets close to the optimum. This problem is mitigated in \textsc{sampleVR} by increasing the number of the sampled instances  over epochs linearly.     In specific, according to Assumption \ref{assumption_liptchiz} and Assumption \ref{assumption_strongly_convex}, every stochastic gradient $\nabla f_i(\omega)$ with $i\in\{1,2, ..., n\}$ is bounded by a positive constant denoted by $C$, that is, $\parallel  \nabla f_i(\omega)  \parallel \le C$.  $\mathbb{E}\left(\frac{1}{k}\sum\limits_{i=1}^k\parallel  \nabla f_i(\tilde{\omega}_{s+1})  \parallel\right) = \frac{1}{n}\sum\limits_{i=1}^n\parallel \nabla f_i(\tilde{\omega}_{s+1})\parallel$. Suppose $\chi  = \frac{1}{k}\sum\limits_{i=1}^k\parallel \nabla f_i(\tilde{\omega}_{s+1})  \parallel - \frac{1}{n}\sum\limits_{i=1}^n\parallel \nabla f_i(\tilde{\omega}_{s+1})\parallel$, we obtain $P( | \chi | \ge \rho)  \le 2e^{\frac{-2k\rho^2}{C^2}}$, according to Hoeffding's inequality. Let $\alpha = P(| \chi | \ge \rho) \le 2e^{\frac{-2k\rho^2}{C^2}}$. Such the probability represents the level of significance, i.e. $\alpha$   for a confidence interval  around the expectation of size $2\rho$. Let $\epsilon = \frac{2\rho^2}{C^2}$. If we require at least $k$ instances  to acquire $(1\mathrm{-}\alpha)$-confidence interval $[-\rho, \rho]$,  $k$ should satisfy
 \begin{equation}
 \label{equ_estimate_samples_lower_bound}
-k\ge - 2C^2\frac{\log \frac{\alpha}{2}}{\rho^2} = - \frac{\log \frac{\alpha}{2}}{\rho^2/(2C^2)} = - \frac{\log \frac{\alpha}{2}}{\epsilon}
-\end{equation}. As illustrated in Algorithm \ref{algorithm_sampleVR}, the number of sampled instances, i.e. $k$ is increased linearly, which leads to the decrease of $\rho$. As a result, the variance between the full gradient and its estimation is decreased.
+k\ge - C^2\frac{\log \frac{\alpha}{2}}{2\rho^2} = - \frac{\log \frac{\alpha}{2}}{2\rho^2/C^2} = - \frac{\log \frac{\alpha}{2}}{\epsilon}
+\end{equation}.  Therefore, $k$ is increased with the decrease of $\epsilon$, and thus the variance caused by the estimation  is reduced.  However, $k$ is not trivial to be identified. On one hand, a large $k$ leads to much computation cost to obtain the estimation of the full gradient.   On the other hand, a small $k$ causes much variance between the estimation and the full gradient.  $\textsc{sampleVR}$ sets $k$ by decreasing $\chi$ linearly, which is a good tradeoff between the time efficiency and the variance. Extensive empirical studies have shown the advantage of this strategy.
 
 
 
@@ -260,16 +262,14 @@ k\ge - 2C^2\frac{\log \frac{\alpha}{2}}{\rho^2} = - \frac{\log \frac{\alpha}{2}}
 
 \begin{Assumption}
 \label{assumption_liptchiz}
-Each a function $f_i$ with $i\in\{1,2, ..., n\}$ in Equ. 1 is $L$-Liptchiz continuous, that is, for any two parameters $\omega_i$ and $\omega_j$:
-$$f_{i_t}(\omega_i)\le f_{i_t}(\omega_j)\mathrm{+}\nabla f_{i_t}(\omega_j)^\mathrm{T} (\omega_i\mathrm{-}\omega_j)\mathrm{+}\frac{L}{2}\parallel \omega_i\mathrm{-}\omega_j\parallel^2$$
+Each a function $f_{i_t}$ with $i_t\in\{1,2, ..., n\}$ in Equ. 1 is $L$-Liptchiz continuous, that is, for any two parameters $\omega_i$ and $\omega_j$, $f_{i_t}(\omega_i)\le f_{i_t}(\omega_j)\mathrm{+}\nabla f_{i_t}(\omega_j)^\mathrm{T} (\omega_i\mathrm{-}\omega_j)\mathrm{+}\frac{L}{2}\parallel \omega_i\mathrm{-}\omega_j\parallel^2$.
 
 
 \end{Assumption}
 
 \begin{Assumption}
 \label{assumption_strongly_convex}
-The function $F$ in Equ. 1 is $\mu$-strongly convex, that is, for any two parameters $\omega_i$ and $\omega_j$:
-$$F(\omega_i)\ge F(\omega_j)\mathrm{+}\nabla F(\omega_j)^\mathrm{T} (\omega_i\mathrm{-}\omega_j)\mathrm{+}\frac{\mu}{2}\parallel \omega_i\mathrm{-}\omega_j\parallel^2$$
+The function $F$ in Equ. 1 is $\mu$-strongly convex, that is, for any two parameters $\omega_i$ and $\omega_j$, $F(\omega_i)\ge F(\omega_j)\mathrm{+}\nabla F(\omega_j)^\mathrm{T} (\omega_i\mathrm{-}\omega_j)\mathrm{+}\frac{\mu}{2}\parallel \omega_i\mathrm{-}\omega_j\parallel^2$.
 \end{Assumption}
 
 \begin{Theorem}
@@ -290,8 +290,15 @@ Given $m\mathrm{=}15\frac{L}{\mu}$, $k\mathrm{=}n$, and $\eta\mathrm{=}\frac{1}{
 \textsc{sampleVR} requires at least  $\frac{\ln \zeta}{\ln \delta}m\mathrm{+}\left( \mathrm{-} \frac{\log\frac{\alpha}{2}}{2\epsilon} (\frac{\ln \zeta}{\ln \delta}\mathrm{+}1)(\frac{\ln \zeta}{\ln \delta})\right)$ atomic gradient calculations with $ \delta=\frac{\mu m \eta^2 (8Ln-8Lk+4Lnk)+nk}{  \mu m nk \eta (1-2\eta L)  } $ to achieve $\mathbb{E}_t[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{\le} \zeta \mathbb{E}_t[F(\omega_0)\mathrm{-}F(\omega_\ast)]$.
 \end{Theorem}
 
- As illustrated in Theorem \ref{Theorem_converge} and Theorem \ref{theorem_gradient_complexity}, \textsc{sampleVR} makes the optimisation objective converge at a linear rate. To be honest,  the convergence performance is  not the best when comparing with SVRG and its variants. However, \textsc{sampleVR}
- has a significant advantage on the gradient complexity according to Theorem \ref{theorem_gradient_complexity}. For example, when the optimisation objective is strongly convex, and achieves $\mathbb{E}_t[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \le \zeta \mathbb{E}_t[F(\omega_0)\mathrm{-}F(\omega_\ast)]$, the gradient complexity of SVRG and its variants is $O\left(\left(n+\frac{L}{\mu}\right)\left( \frac{\ln \zeta}{\ln \delta}\right)\right)$ with $m=\frac{L}{\mu}$ \cite{Allen2015UniVR}. But, the gradient complexity of \textsc{sampleVR}  is $O\left(\left(\mathrm{-} \frac{\log\frac{\alpha}{2}}{2\epsilon} (\frac{\ln \zeta}{\ln \delta}+1)+\frac{L}{\mu} \right )\left( \frac{\ln \zeta}{\ln \delta}\right)  \right)$ with $m=\frac{L}{\mu}$. Considering $\ln n \ll n$ with $\zeta=\frac{1}{n}$, \textsc{sampleVR}  outperforms SVRG and its variants on the gradient complexity obviously.
+ As illustrated in Theorem \ref{Theorem_converge} and Theorem \ref{theorem_gradient_complexity}, \textsc{sampleVR} makes the optimisation objective converge at a linear rate. To be honest,  the convergence performance is  not the best when comparing with SVRG  because that the ratio of the learning rate of \textsc{sampleVR} against that of \textsc{SVRG} is
+\begin{equation}
+\begin{array}{ll}
+ \lim\limits_{n\to\infty}\frac{\delta^{\mathrm{\textsc{sampleVR}}}}{\delta^{\mathrm{SVRG}}} \mathrm{=} \lim\limits_{n\to\infty}\frac{\mu m\eta^2(8Ln-8Lk+4Lnk)}{nk(1+2L\mu \eta^2 m)}  \mathrm{=} \frac{\mu m \eta^2 (8L+4Lk)+k}{k(1+2mL\mu\eta^2)} \\
+ = 1+\frac{\mu m \eta^2 (8L+2Lk)}{k(1+2L\mu m \eta^2)}\xlongequal[n\mathrm{\rightarrow}\infty]{k\mathrm{\rightarrow}n}1+\frac{2L\mu m \eta^2}{1+2L\mu m \eta^2}<2
+ \end{array} 
+\end{equation} for large training data. However, \textsc{sampleVR} has a significant advantage on the gradient complexity according to Theorem \ref{theorem_gradient_complexity}. For example, when the optimisation objective is strongly convex, and achieves $\mathbb{E}_t[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \le \zeta \mathbb{E}_t[F(\omega_0)\mathrm{-}F(\omega_\ast)]$ with $\zeta=\frac{1}{n}$, the gradient complexity of SVRG and its variants is $O\left(n \ln n\right)$ \cite{Allen2015UniVR}. But, the gradient complexity of \textsc{sampleVR}  is $O( \ln^2 n ) $. Considering $\ln n \ll n$, \textsc{sampleVR}  outperforms SVRG and its variants on the gradient complexity obviously.
+
+%$O\left(\left(n+15\frac{L}{\mu}\right)\left( \frac{\ln \zeta}{\ln \delta}\right)\right)$ with $m=15\frac{L}{\mu}$ \cite{Allen2015UniVR}. But, the gradient complexity of \textsc{sampleVR}  is $O\left(\left(\mathrm{-} \frac{\log\frac{\alpha}{2}}{2\epsilon} (\frac{\ln \zeta}{\ln \delta}+1)+15\frac{L}{\mu} \right )\left( \frac{\ln \zeta}{\ln \delta}\right)  \right)$ with $m=15\frac{L}{\mu}$. Considering $\ln n \ll n$ with $\zeta=\frac{1}{n}$, \textsc{sampleVR}  outperforms SVRG and its variants on the gradient complexity obviously.
 
 
 
@@ -340,14 +347,12 @@ The existing variants of SGD with the variance reduction technique, including SV
 Those algorithms are evaluated on eight datasets, including ijcnn1, colon-cancer, duke-brease-cancer, a9a, mg, cpusmall, yearPredictionMSD, and space-ga. All of those datasets are public on the LibSVM website \footnote{http://www.csie.ntu.edu.tw/$\sim$cjlin/libsvmtools/datasets/}. 
 
 First, those algorithms are compared by conducting the $l2$-regularised logistic regression tasks on the datasets: ijcnn1, colon-cancer, duke-breast-cancer, and a9a. When the label of an instance is set to be $1$ or $-1$, the loss function of the $l2$-regularised logistic regression tasks is:
-\begin{equation}
-\label{standard_sgd}
+$$
 \min\limits_\omega \frac{1}{n}\sum\limits_{i=1}^n \log(1+e^{-y_i \omega^\mathrm{T} x_i }) + \lambda \parallel \omega \parallel^2
-\end{equation}. Second, we compare those algorithms by conducting ridge regression tasks on the other four datasets, i.e. mg, cpusmall, yearPredictionMSD, and space-ga. The loss function of the ridge regression tasks is:
-\begin{equation}
-\label{standard_sgd}
+$$. Second, we compare those algorithms by conducting ridge regression tasks on the other four datasets, i.e. mg, cpusmall, yearPredictionMSD, and space-ga. The loss function of the ridge regression tasks is:
+$$
 \min\limits_\omega \frac{1}{n}\sum\limits_{i=1}^n\left(\omega^{\mathrm{T}}x_i-y_i\right)^2 + \lambda \parallel \omega \parallel^2
-\end{equation}. We set $\lambda$ to be $10^{-5}$, and the learning rate, i.e. $\eta$ to be $10^{-4}$ for all the evaluation tests.  The epoch size $m_s$ in SVRG and \textsc{CheapSVRG} is set to be the size of the training data, i.e. $m_s=n$. The maximal epoch size in S2GD is set to be the size of the training data, i.e. $n$.    The x-axis in all  figures of the evaluation tests represents the computational cost. The computational cost is measured by the number of gradient computations divided by  the size of the training data, i.e. $n$. The y-axis in all the figures denotes the training loss residual which is the training loss minus the optimum. Here, the optimum is estimated by running the gradient descent for a long time. The value in the bracket of the legend of SVRG++ and \textsc{sampleVR} represents the initial epoch size divided by the size of the training data, i.e. $n$ and $\epsilon$ according to Algorithm \ref{algorithm_sampleVR}, respectively.
+$$. We set $\lambda$ to be $10^{-5}$, and the learning rate, i.e. $\eta$ to be $10^{-4}$ for all the evaluation tests.  The epoch size $m_s$ in SVRG and \textsc{CheapSVRG} is set to be the size of the training data, i.e. $m_s=n$. The maximal epoch size in S2GD is set to be the size of the training data, i.e. $n$.    The x-axis in all  figures of the evaluation tests represents the computational cost. The computational cost is measured by the number of gradient computations divided by  the size of the training data, i.e. $n$. The y-axis in all the figures denotes the training loss residual which is the training loss minus the optimum. Here, the optimum is estimated by running the gradient descent for a long time. The value in the bracket of the legend of SVRG++ and \textsc{sampleVR} represents the initial epoch size divided by the size of the training data, i.e. $n$ and $\epsilon$ according to Algorithm \ref{algorithm_sampleVR}, respectively.
 
 \subsection{$l2$-regularised logistic regression}
 \label{sect_performance_evaluation_convergence}
@@ -362,7 +367,8 @@ As illustrated in Figure \ref{figure_ridge_regression_convergence}, we report th
 
 \section{Conclusion}
 \label{sect_conclusion}
-This paper proposes a general framework, i.e. EUI to unify the existing variants of SVRG. After that, we explain the reason of the  variance reduction technique   from a new prospective in the framework. Additionally,  we propose a new variant of SGD with the variance reduction technique, i.e. \textsc{sampleVR} which gets rid of computing the full gradient,  thus decreasing much computational cost. The theoretical and  empirical studies show that \textsc{sampleVR} outperforms the previous work, accelerating the training loss significantly.
+This paper first analyses the  variance reduction technique   from a new prospective in a general framework. Then, a new variant of SGD with the variance reduction technique, i.e. \textsc{sampleVR} is proposed. The theoretical and  empirical studies show the advantages of \textsc{sampleVR} significantly.
+%This paper proposes a general framework, i.e. EUI to unify the existing variants of SVRG. After that, we explain the reason of the  variance reduction technique   from a new prospective in the framework. Additionally,  we propose a new variant of SGD with the variance reduction technique, i.e. \textsc{sampleVR} which gets rid of computing the full gradient,  thus decreasing much computational cost. The theoretical and  empirical studies show that \textsc{sampleVR} outperforms the previous work, accelerating the training loss significantly.
 
 
 \bibliography{reference}
