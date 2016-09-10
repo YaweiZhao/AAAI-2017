@@ -76,7 +76,7 @@
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="22" columns="2">
+<lyxtabular version="3" rows="21" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top" width="7cm">
@@ -397,26 +397,6 @@ the rate of convergence
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -458,7 +438,11 @@ omega,
 \backslash
 tilde{
 \backslash
-omega}$
+omega}, 
+\backslash
+omega_
+\backslash
+ast$
 \end_layout
 
 \end_inset
@@ -479,7 +463,11 @@ status open
 
 $
 \backslash
-omega$ is a parameter, and $
+omega$ is a parameter, $
+\backslash
+omega_
+\backslash
+ast$ is the optimum, and $
 \backslash
 tilde{
 \backslash
@@ -504,7 +492,7 @@ status open
 
 \begin_layout Plain Layout
 
-$d_t$
+$d,d_t$
 \end_layout
 
 \end_inset
@@ -523,7 +511,7 @@ status open
 
 \begin_layout Plain Layout
 
-$d_t=
+the variance, $d_t=
 \backslash
 parallel 
 \backslash
@@ -664,7 +652,11 @@ status open
 
 $
 \backslash
-gamma_t$
+gamma_t, 
+\backslash
+dot{
+\backslash
+gamma_t}$
 \end_layout
 
 \end_inset
@@ -678,25 +670,17 @@ gamma_t$
 \begin_inset Text
 
 \begin_layout Plain Layout
-the update gradient for training parameters 
+the update gradient 
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-$
+, and $
 \backslash
-omega_t$ with $t
+dot{
 \backslash
-mathrm{
-\backslash
-in}
-\backslash
-{0,1, ..., 
-\backslash
-omega_{m_s-1}
-\backslash
-}$
+gamma_t}$ is its estimation.
 \end_layout
 
 \end_inset
@@ -731,7 +715,18 @@ $m_s, m$
 \begin_inset Text
 
 \begin_layout Plain Layout
-the epoch size
+the epoch size, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+and $m$ is a constant.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
