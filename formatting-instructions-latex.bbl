@@ -35,6 +35,12 @@ Defazio, A.; Bach, F.; and Lacoste-Julien, S.
 \newblock In {\em Advances in Neural Information Processing Systems},
   1646--1654.
 
+\bibitem[\protect\citeauthoryear{Garber and Hazan}{2015}]{Garber:2015td}
+Garber, D., and Hazan, E.
+\newblock 2015.
+\newblock {Fast and Simple PCA via Convex Optimization}.
+\newblock {\em arXiv.org}.
+
 \bibitem[\protect\citeauthoryear{Johnson and Zhang}{2013}]{Johnson:9MAvkbgy}
 Johnson, R., and Zhang, T.
 \newblock 2013.
