@@ -65,35 +65,28 @@ The symbols used in the paper and their notations are presented in Figure \ref{s
 
 \section{Proofs}
 \label{sect_proofs}
-In order to make the proofs of the theorems in this paper easy to read, the  assumptions are re-presented here. 
-
-%The optimisation objective is:
-%\begin{equation}
-%\label{equa_loss_minimization}
-%\min F(\omega),~~~~~F(\omega)=\frac{1}{n}\sum\limits_{i=1}^n f_i(\omega)+R(\omega)\\
-%\end{equation}. The assumptions are shown as follows:
+In order to make the proofs of the theorems in this paper easy to read, the  loss function and assumptions are re-presented here. The optimisation objective is:
+\begin{equation}
+\label{equa_loss_minimization}
+\min F(\omega),~~~~~F(\omega)=\frac{1}{n}\sum\limits_{i=1}^n f_i(\omega)+R(\omega)\\
+\end{equation}. The assumptions are shown as follows:
 
 
 \begin{Assumption}
-Each a function $f_{i_t}$ with $i_t\in\{1,2, ..., n\}$ in Equ. 1 is $L$-Liptchiz continuous, that is,  $\parallel  f_{i_t}(\omega_i) - f_{i_t}(\omega_j)  \parallel \le L \parallel \omega_i - \omega_j    \parallel$ holds for any two parameters $\omega_i$ and $\omega_j$. Equivalently, we obtain:
 \label{assumption_liptchiz}
-\begin{equation}
-\label{equa_l_smooth} 
+Each  differentiable function $f_{i_t}$ with $i_t\in\{1,2, ..., n\}$ in Equation \ref{equa_loss_minimization} is $L$-Liptchiz continuous, that is,  $\parallel  f_{i_t}(\omega_i) - f_{i_t}(\omega_j)  \parallel \le L \parallel \omega_i - \omega_j    \parallel$ holds for any two parameters $\omega_i$ and $\omega_j$. Equivalently, we obtain
+$$
 f_{i_t}(\omega_i)\le f_{i_t}(\omega_j)\mathrm{+}\nabla f_{i_t}(\omega_j)^\mathrm{T} (\omega_i\mathrm{-}\omega_j)\mathrm{+}\frac{L}{2}\parallel \omega_i\mathrm{-}\omega_j\parallel^2
- \end{equation}.
-
+$$.
 \end{Assumption}
 
 \begin{Assumption}
 \label{assumption_strongly_convex}
-The function $F$ in Equ. 1 is $\mu$-strongly convex, that is, for any two parameters $\omega_i$ and $\omega_j$:
-\begin{equation}
-F(\omega_i)\ge F(\omega_j)\mathrm{+}\nabla F(\omega_j)^\mathrm{T} (\omega_i\mathrm{-}\omega_j)\mathrm{+}\frac{\mu}{2}\parallel \omega_i\mathrm{-}\omega_j\parallel^2
-\end{equation}.
-
-\end{Assumption}
-
-After that, all the proofs of the theorems presented in the main document are illustrated as follows:
+The function $F$ in Equation\ref{equa_loss_minimization}1 is $\mu$-strongly convex. That is, for any two parameters $\omega_i$ and $\omega_j$, we obtain 
+$$
+F(\omega_i)\ge F(\omega_j)\mathrm{+}\nabla F(\omega_j)^\mathrm{T} (\omega_i\mathrm{-}\omega_j)\mathrm{+}\frac{\mu}{2}\parallel \omega_i\mathrm{-}\omega_j\parallel^2 
+$$.
+\end{Assumption} 
 
 \begin{Theorem}
 \label{theorem_vr_lower_bound}
@@ -109,7 +102,7 @@ d_{t} = \parallel \omega_{t}\mathrm{-}\tilde{\omega} \parallel^2
 =\parallel \mathrm{-}\sum\limits_{i=1}^t \eta \gamma_i \parallel^2\\
 = \eta^2 \sum\limits_{j=1}^p\left(  \sum\limits_{i=1}^t a_{ij}  \right)^2
 \end{array}
-\end{equation}. Taking the expectation of $i_{i_t}$,  $\mathbb{E}(\gamma_t) = \mathbb{E}(\nabla f_{i_t}(\omega_t)-\nabla f_{i_t}(\tilde{\omega})+\nabla F(\tilde{\omega})) = \nabla F(\omega_{t})$ holds,   and we thus obtain the upper bound of the distance:
+\end{equation}. Taken the expectation of $i_t$,  $\mathbb{E}(\gamma_t) = \mathbb{E}(\nabla f_{i_t}(\omega_t)-\nabla f_{i_t}(\tilde{\omega})+\nabla F(\tilde{\omega})) = \nabla F(\omega_{t})$ holds,   and we thus obtain the upper bound of the distance:
 \begin{equation}
 \begin{array}{ll}
 d_{t} = \eta^2 t^2 \sum\limits_{j=1}^p\left( \frac{1}{t} \sum\limits_{i=1}^t a_{ij}  \right)^2
@@ -132,28 +125,31 @@ d_{t} = \eta^2 p \left( \frac{1}{p} \sum\limits_{j=1}^p\left( \sum\limits_{i=1}^
 \begin{Lemma}
 \label{lemma_nu}
 Given $\nu = \frac{1}{k}\sum\limits_{t=1}^k  \nabla f_{i_t}(\omega) - \frac{1}{n}\sum\limits_{i=1}^n \nabla f_i(\omega)$, we obtain
-$\mathbb{E}_{i_t}\parallel \nu  \parallel^2 \le \frac{2(n-k)L^2}{nk}$.
+$\parallel \nu  \parallel^2 \le \frac{2(n-k)L^2}{nk}$.
 \end{Lemma}
 \begin{proof}
 Since $f_{i_t}$ is $L$-Liptchiz continuous according to Assumption \ref{assumption_liptchiz},  we obtain $\parallel  f_{i_t}(\omega_i) - f_{i_t}(\omega_j)  \parallel \le L \parallel \omega_i - \omega_j    \parallel$. Thus, $\parallel \nabla f_{i_t}(\omega) \parallel \le L$ holds for an arbitrary parameter $\omega$.
-Without loss of generality, suppose that indices of the sampled $k$ instances are $i_t\in\{1,2, ..., k\}$.
+Without loss of generality, suppose that indices of the sampled $k$ instances are $i_t=t$ with $t\in\{1,2, ..., k\}$.
 \begin{equation}
 \begin{array}{ll}
-\mathbb{E}_{i_t}\parallel \nu  \parallel^2 
-= \mathbb{E}_{i_t}\left( \parallel \frac{1}{k}\sum\limits_{i=1}^k  \nabla f_{i}(\omega) \mathrm{-} \frac{1}{n}\sum\limits_{i=1}^n \nabla f_i(\omega) \parallel^2  \right)    \\
-= \frac{1}{(nk)^2}  \mathbb{E}_{i_t}\parallel  (n-k)\sum\limits_{t=1}^k \nabla f_{i}(\omega)-k \sum\limits_{i=k+1}^n \nabla f_{i}(\omega) \parallel^2      \\
-\le  \frac{2(n-k)^2}{(nk)^2}  \sum\limits_{i=1}^k \mathbb{E}_{i_t} \parallel  \nabla f_{i}(\omega) \parallel^2  + \frac{2k^2}{(nk)^2}  \sum\limits_{i=k+1}^{n} \mathbb{E}_{i_t} \parallel  \nabla f_{i}(\omega) \parallel^2    \\
-\le \frac{2(n-k)L^2}{nk}
+\parallel \nu  \parallel^2 
+=\parallel \frac{1}{k}\sum\limits_{t=1}^k  \nabla f_{t}(\omega) \mathrm{-} \frac{1}{n}\sum\limits_{i=1}^n \nabla f_i(\omega) \parallel^2    \\
+=\frac{1}{(nk)^2}\parallel (n-k)\sum\limits_{t=1}^k  \nabla f_{t}(\omega) \mathrm{-} k\sum\limits_{i=k+1}^n \nabla f_i(\omega) \parallel^2\\
+\le \frac{1}{(nk)^2} ( 2(n-k)^2 k^2 \parallel \frac{1}{k} \sum\limits_{t=1}^k \nabla f_{t}(\omega)\parallel^2 \\
++2k^2 (n-k)^2 \parallel \frac{1}{n-k}\sum\limits_{i=k+1}^n \nabla f_{i}(\omega) \parallel^2 )     \\
+\le \frac{1}{(nk)^2} ( 2(n-k)^2 k \sum\limits_{t=1}^k\parallel  \nabla f_{t}(\omega)\parallel^2 \\
++2k^2 (n-k) \sum\limits_{i=k+1}^n \parallel  \nabla f_{i}(\omega) \parallel^2 )     \\
+\le \frac{4(n-k)^2L^2}{n^2}
 \end{array} 
 \end{equation}.  
 \end{proof}
 \begin{Theorem}
 \label{Theorem_converge}
 Given $\delta=\frac{1+4L\mu m \eta^2}{  \mu m \eta (1-2\eta L)  } < 1$ holds with $\frac{1}{12L}\left( 1- \sqrt{\frac{\mu m - 24L}{\mu m}} \right) < \eta < \frac{1}{12L}\left( 1+ \sqrt{\frac{\mu m - 24L}{\mu m}} \right)$, \textsc{sampleVR} makes the training loss converge as
-$\mathbb{E}_t[F(\tilde{\omega}_{s\mathrm{+}1}) \mathrm{-} F(\omega_\ast)]  \le \delta \mathbb{E}_t[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{4(n-k)L^2\eta}{1-2L\eta}$.
+$\mathbb{E}[F(\tilde{\omega}_{s\mathrm{+}1}) \mathrm{-} F(\omega_\ast)]  \le \delta \mathbb{E}[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{8(\epsilon n+s\log\frac{\alpha}{2})^2L^2\eta}{\epsilon^2n^2(1-2\eta L)}$.
 \end{Theorem}
 \begin{proof}
-Construct an auxiliary function $h_i(\omega)=f_i(\omega)\mathrm{-}f_i(\omega_\ast)\mathrm{-}\nabla f_i(\omega_\ast)^\mathrm{T}(\omega\mathrm{-}\omega_\ast)$, and $h_i(\omega_\ast)=\min\limits_\omega h_i(\omega)$ holds because of $\nabla h_i(\omega_\ast)=0$. Thus, $h_i(\omega_\ast)\le \min\limits_\eta [h_i(\omega\mathrm{-}\eta \nabla h_i(\omega))]$ holds. According to Assumption \ref{assumption_liptchiz}, we obtain
+Construct an auxiliary function $h_i(\omega)=f_i(\omega)\mathrm{-}f_i(\omega_\ast)\mathrm{-}\nabla f_i(\omega_\ast)^\mathrm{T}(\omega\mathrm{-}\omega_\ast)$, and $h_i(\omega_\ast)=\min\limits_\omega h_i(\omega)$ holds because of $\nabla h_i(\omega_\ast)=0$. Thus, $h_i(\omega_\ast)\le \min\limits_\eta [h_i(\omega\mathrm{-}\eta \nabla h_i(\omega))]$ holds. We obtain
 $h_i(\omega_\ast)\le\min\limits_\eta [h_i(\omega)\mathrm{-}\eta \parallel \nabla h_i(\omega) \parallel^2\mathrm{+}\frac{1}{2} L \eta^2 \parallel  \nabla h_i(\omega)  \parallel^2  ] 
 =h_i(\omega)\mathrm{-}\frac{1}{2L}\parallel  \nabla h_i(\omega) \parallel^2$.  That is, 
 $\parallel   \nabla f_i(\omega)  \mathrm{-} \nabla f_i(\omega_\ast)   \parallel^2 \le 2L [ f_i(\omega)  \mathrm{-}  f_i(\omega_\ast)  \mathrm{-}\nabla f_i(\omega_\ast)^{\mathrm{T}}(\omega\mathrm{-}\omega_\ast)  ]$. By summing this inequality over $i=\{1,2, ..., n\}$, and using the fact that $\nabla F(\omega_\ast)=0$, we obtain $
@@ -161,10 +157,9 @@ $\parallel   \nabla f_i(\omega)  \mathrm{-} \nabla f_i(\omega_\ast)   \parallel^
 \begin{equation}\label{equa_1}
 \begin{array}{ll}
 \mathbb{E}_{i_t}(\parallel  \nabla f_{i_{t}}(\omega) \mathrm{-} \nabla f_{i_{t}}(\omega_{\ast}) \parallel^2) \\
-= \frac{1}{n} \sum\limits_{i=1}^n \parallel  \nabla f_i(\omega)  \mathrm{-} \nabla f_i(\omega_\ast)  \parallel^2 \\
-\le 2L [F(\omega)\mathrm{-}F(\omega_\ast)] 
+= \frac{1}{n} \sum\limits_{i=1}^n \parallel  \nabla f_i(\omega) \mathrm{-} \nabla f_i(\omega_\ast)  \parallel^2 \le 2L [F(\omega)\mathrm{-}F(\omega_\ast)] 
 \end{array} 
-\end{equation}.  
+\end{equation}.  Therefore,
 \begin{equation}\label{equa_2}
 \begin{array}{ll}
 \mathbb{E}_{i_t}\parallel  \dot{\gamma}_{t} \parallel^2  
@@ -174,48 +169,48 @@ $\parallel   \nabla f_i(\omega)  \mathrm{-} \nabla f_i(\omega_\ast)   \parallel^
 \le 2\mathbb{E}_{i_t} \parallel \nabla f_{i_{t}}(\omega_{t}) \mathrm{-} \nabla f_{i_{t}}(\omega_{\ast}) \parallel^2  \mathrm{+} \\
 4 \mathbb{E}_{i_t} \parallel  \nabla f_{i_{t}}(\tilde{\omega}_{s}) \mathrm{-} \nabla f_{i_{t}}(\omega_{\ast}) \mathrm{-} \nabla F(\tilde{\omega}_s) \parallel^2 \mathrm{+} 4\mathbb{E}_{i_t} \parallel \nu  \parallel^2 \\ 
 \le 2\mathbb{E}_{i_t} \parallel \nabla f_{i_{t}}(\omega_{t}) \mathrm{-} \nabla f_{i_{t}}(\omega_{\ast}) \parallel^2  \mathrm{+} 4 \mathbb{E}_{i_t} \parallel  \nabla f_{i_{t}}(\tilde{\omega}_{s}) \mathrm{-} \nabla f_{i_{t}}(\omega_{\ast}) \\
-\mathrm{-} \mathbb{E}_{i_t} \left ( \nabla f_{i_t}(\tilde{\omega}_s) \mathrm{-} \nabla f_{i_t}(\omega_\ast)   \right)\parallel^2   \mathrm{+} \frac{8(n-k)L^2}{nk}   \\ 
+\mathrm{-} \mathbb{E}_{i_t} \left ( \nabla f_{i_t}(\tilde{\omega}_s) \mathrm{-} \nabla f_{i_t}(\omega_\ast)   \right)\parallel^2   \mathrm{+} \frac{16(n-k)^2L^2}{n^2}   \\ 
 \le 2\mathbb{E}_{i_t} \parallel \nabla f_{i_{t}}(\omega_{t}) \mathrm{-} \nabla f_{i_{t}}(\omega_{\ast}) \parallel^2  \mathrm{+} \\
-4 \mathbb{E}_{i_t} \parallel  \nabla f_{i_{t}}(\tilde{\omega}_{s}) \mathrm{-} \nabla f_{i_{t}}(\omega_{\ast}) \parallel^2 \mathrm{+} \frac{8(n-k)L^2}{nk} \\
-\le 4L [F(\omega_t)\mathrm{-}F(\omega_\ast)] \mathrm{+}  8L [F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{8(n-k)L^2}{nk}
+4 \mathbb{E}_{i_t} \parallel  \nabla f_{i_{t}}(\tilde{\omega}_{s}) \mathrm{-} \nabla f_{i_{t}}(\omega_{\ast}) \parallel^2 \mathrm{+} \frac{16(n-k)^2L^2}{n^2} \\
+\le 4L [F(\omega_t)\mathrm{-}F(\omega_\ast)] \mathrm{+}  8L [F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{16(n-k)^2L^2}{n^2}
 \end{array} 
-\end{equation}.  The third inequality uses Lemma \ref{lemma_nu},  the fourth inequality uses $\mathbb{E}[\xi\mathrm{-}\mathbb{E}\xi]^2 \le \mathbb{E}\xi^2$, and the fifth inequality uses (\ref{equa_1}). Therefore, we obtain 
+\end{equation}.  The third inequality uses Lemma \ref{lemma_nu},  and the fourth inequality uses $\mathbb{E}[\xi\mathrm{-}\mathbb{E}\xi]^2 \le \mathbb{E}\xi^2$, and the fifth inequality uses (\ref{equa_1}). Therefore, we obtain 
 \begin{equation}
 \begin{array}{ll}
-\mathbb{E}_{i_t}\parallel  \omega_{t+1}\mathrm{-}\omega_\ast \parallel^2\\
+\mathbb{E}_{i_t}\parallel  \omega_{t+1}\mathrm{-}\omega_\ast \parallel^2 = \mathbb{E}_{i_t}\parallel  \omega_{t}\mathrm{-}\eta\dot{\gamma}_t\mathrm{-}\omega_\ast \parallel^2\\
 =\parallel  \omega_{t}\mathrm{-}\omega_\ast  \parallel^2  \mathrm{-}2\eta(\omega_t\mathrm{-}\omega_\ast)^\mathrm{T}\mathbb{E}_{i_t}\dot{\gamma}_{t}  \mathrm{+}  \eta^2 \mathbb{E}_{i_t}\parallel  \dot{\gamma}_{t}  \parallel^2  \\
 \le \parallel  \omega_{t}\mathrm{-}\omega_\ast  \parallel^2  \mathrm{-}2\eta(\omega_t\mathrm{-}\omega_\ast)^\mathrm{T}\nabla F(\omega_t) \mathrm{+} \\
-\eta^2 \left(  4L [F(\omega_t)\mathrm{-}F(\omega_\ast)] \mathrm{+} 8L [F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{8(n-k)L^2}{nk} \right)  \\ 
+\eta^2 \left(  4L [F(\omega_t)\mathrm{-}F(\omega_\ast)] \mathrm{+} 8L [F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{16(n-k)^2L^2}{n^2} \right)  \\ 
 \le \parallel  \omega_{t}\mathrm{-}\omega_\ast  \parallel^2  \mathrm{-}2\eta( F(\omega_t) \mathrm{-} F(\omega_\ast) ) \mathrm{+} \\
-\eta^2 \left(  4L [F(\omega_t)\mathrm{-}F(\omega_\ast)] \mathrm{+} 8L [F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{8(n-k)L^2}{nk}\right)  \\ 
+\eta^2 \left(  4L [F(\omega_t)\mathrm{-}F(\omega_\ast)] \mathrm{+} 8L [F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{16(n-k)^2L^2}{n^2}\right)  \\ 
 = \parallel  \omega_{t}\mathrm{-}\omega_\ast  \parallel^2  \mathrm{-}2\eta(1\mathrm{-}2\eta L) [F(\omega_t) \mathrm{-} F(\omega_\ast) ] \mathrm{+} \\
-8L \eta^2 [F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{8(n-k)L^2\eta^2}{nk}
+8L \eta^2 [F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{16(n-k)^2L^2\eta^2}{n^2}
 \end{array} 
-\end{equation}. The first inequality uses (\ref{equa_2}), and the second inequality holds because that $F(\omega)$ is convex.  We thus obtain 
+\end{equation}. The first inequality uses $\mathbb{E}_{i_t}(\dot{\gamma}_t) \mathrm{=} \nabla F(\omega_t)$ and (\ref{equa_2}), and the second inequality holds because that $F(\omega)$ is convex.  We thus obtain 
 \begin{equation}
 \begin{array}{ll}
 \parallel  \omega_{m}\mathrm{-}\omega_\ast \parallel^2\\
 \le \parallel  \omega_{0}\mathrm{-}\omega_\ast  \parallel^2  \mathrm{-}2\eta(1\mathrm{-}2\eta L)\sum\limits_{t=0}^{m-1} [F(\omega_t) \mathrm{-} F(\omega_\ast) ] \mathrm{+} \\
-8Lm \eta^2 [F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{8m(n-k)L^2\eta^2}{nk} \\
+8Lm \eta^2 [F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+}\frac{16m(n-k)^2L^2\eta^2}{n^2} \\
 =\parallel  \tilde{\omega}_{s}\mathrm{-}\omega_\ast  \parallel^2  \mathrm{-}2\eta(1\mathrm{-}2\eta L)m \left(\frac{1}{m}\sum\limits_{t=0}^{m-1} [F(\omega_t) \mathrm{-} F(\omega_\ast) ] \right)\mathrm{+} \\
-8Lm \eta^2 [F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{8m(n-k)L^2\eta^2}{nk}\\
+8Lm \eta^2 [F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{16m(n-k)^2L^2\eta^2}{n^2}\\
 %\le \parallel  \tilde{\omega}_{s}\mathrm{-}\omega_\ast  \parallel^2  \mathrm{-}2\eta(1\mathrm{-}2\eta L)m [F(\frac{1}{m}\sum\limits_{t=0}^{m-1} \omega_t) \mathrm{-} F(\omega_\ast) ] \mathrm{+} \\
 %\frac{16L(n-k)+8Lnk}{nk} m \eta^2 [F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)]\\
 = \parallel  \tilde{\omega}_{s}\mathrm{-}\omega_\ast  \parallel^2  \mathrm{-}2\eta(1\mathrm{-}2\eta L)m \mathbb{E}_t[F(\tilde{\omega}_{s+1}) \mathrm{-} F(\omega_\ast) ] \mathrm{+} \\
-8Lm \eta^2 [F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{8m(n-k)L^2\eta^2}{nk}
+8Lm \eta^2 [F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+}\frac{16m(n-k)^2L^2\eta^2}{n^2}
 \end{array} 
 \end{equation}. The second equality  holds because of $\omega_0=\tilde{\omega}_s$. The third equality holds when we take expectation of $t$. The reason is that $\tilde{\omega}_{s+1}$  is identified by picking $\omega_t$ with $t\in\{0,1, ..., m-1\}$ randomly, and $\tilde{\omega}_s$ is a constant in an epoch.  Thus, 
 \begin{equation}
 \begin{array}{ll}
-2\eta(1\mathrm{-}2\eta L)m \mathbb{E}_t [F(\tilde{\omega}_{s\mathrm{+}1}) \mathrm{-} F(\omega_\ast) ] \\
-\le  \parallel  \tilde{\omega}_{s}\mathrm{-}\omega_\ast  \parallel^2 \mathrm{+} 8L m \eta^2 \mathbb{E}_t[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{8m(n-k)L^2\eta^2}{nk} \\ 
-\le \frac{2}{\mu}\mathbb{E}_t[ F(\tilde{\omega}_{s}) \mathrm{-}  F(\omega_\ast)  ]\\
- \mathrm{+} 8L m \eta^2 \mathbb{E}_t[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{8m(n-k)L^2\eta^2}{nk} \\
+2\eta(1\mathrm{-}2\eta L)m \mathbb{E} [F(\tilde{\omega}_{s\mathrm{+}1}) \mathrm{-} F(\omega_\ast) ] \\
+\le  \parallel  \tilde{\omega}_{s}\mathrm{-}\omega_\ast  \parallel^2 \mathrm{+} 8L m \eta^2 \mathbb{E}[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+}\frac{16m(n-k)^2L^2\eta^2}{n^2}\\ 
+\le \frac{2}{\mu}\mathbb{E}[ F(\tilde{\omega}_{s}) \mathrm{-}  F(\omega_\ast)  ]\mathrm{+} 8L m \eta^2 \mathbb{E}[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \\
+\mathrm{+}\frac{16m(n-k)^2L^2\eta^2}{n^2}\\
 %= \frac{2}{\mu}\mathbb{E}_t[ F(\tilde{\omega}_{s}) \mathrm{-}  F(\omega_\ast)  ]\mathrm{+} 8L m \eta^2 \mathbb{E}_t[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{-} \\
 %\frac{8m\left( \epsilon n + s \log \frac{\alpha}{2} \right)L^2\eta^2}{ns \log\frac{\alpha}{2}}
 \end{array} 
 \end{equation}. The second inequality holds due to the Assumption \ref{assumption_strongly_convex}. Therefore, we obtain $\delta=\frac{1+4L\mu m \eta^2}{  \mu m \eta (1-2\eta L)  } < 1$ with $\frac{1}{12L}\left( 1- \sqrt{\frac{\mu m - 24L}{\mu m}} \right) < \eta < \frac{1}{12L}\left( 1+ \sqrt{\frac{\mu m - 24L}{\mu m}} \right)$, and thus the training loss converges such that
-$\mathbb{E}_t[F(\tilde{\omega}_{s\mathrm{+}1}) \mathrm{-} F(\omega_\ast)]  \le \delta \mathbb{E}_t[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{4(n-k)L^2\eta}{(1-2L\eta)nk}$.  Thus, the Theorem \ref{Theorem_converge} have been proved.
+$\mathbb{E}[F(\tilde{\omega}_{s\mathrm{+}1}) \mathrm{-} F(\omega_\ast)]  \le \delta \mathbb{E}[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{8(n-k)^2L^2\eta}{n^2(1-2\eta L)}$. Considering $k\mathrm{=}\frac{-s\log\frac{\alpha}{2}}{\epsilon}$, we obtain $\mathbb{E}[F(\tilde{\omega}_{s\mathrm{+}1}) \mathrm{-} F(\omega_\ast)]  \le \delta \mathbb{E}[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{8(\epsilon n+s\log\frac{\alpha}{2})^2L^2\eta}{\epsilon^2n^2(1-2\eta L)}$. Thus, the Theorem \ref{Theorem_converge} have been proved.
 \end{proof}
 
 
@@ -252,24 +247,11 @@ $\mathbb{E}_t[F(\tilde{\omega}_{s\mathrm{+}1}) \mathrm{-} F(\omega_\ast)]  \le \
 
 \begin{Theorem}
 \label{theorem_gradient_complexity}
-\textsc{sampleVR} requires at least  $\frac{\ln \zeta}{\ln \delta}m\mathrm{+}\left( \mathrm{-} \frac{\log\frac{\alpha}{2}}{2\epsilon} (\frac{\ln \zeta}{\ln \delta}+1)(\frac{\ln \zeta}{\ln \delta})\right)$ atomic gradient calculations with $\delta=\frac{1+4L\mu m \eta^2}{  \mu m \eta (1-2\eta L)  }$ to achieve $\mathbb{E}_t[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \le \zeta \mathbb{E}_t[F(\omega_0)\mathrm{-}F(\omega_\ast)]$.
+Let $\alpha$ be small enough, so that $\frac{8(\epsilon n+\log\frac{\alpha}{2})^2L^2\eta}{\epsilon^2n^2(1-2\eta L)}\le F(\tilde{\omega}_0) - F(\omega_\ast)$ holds, \textsc{sampleVR} requires $O(\ln^2\frac{1}{\epsilon})$ atomic gradient calculations  to achieve $\mathbb{E}[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \le \zeta$.
 \end{Theorem}
 \begin{proof}
-
-The required atomic gradient calculations for the $s_{th}$ epoch is denoted by $G_\mathrm{s}$. We obtain
-$G_s = k \mathrm{+}m = \mathrm{-} \frac{s\log\frac{\alpha}{2}}{\epsilon}\mathrm{+}m$. According to Theorem \ref{Theorem_converge}, 
-\begin{equation}
-\begin{array}{ll}
-\mathbb{E}_t[F(\tilde{\omega}_{s\mathrm{+}1}) \mathrm{-} F(\omega_\ast)]  \le \delta \mathbb{E}_t[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{4(n-k)L^2\eta}{1-2L\eta}\\
-= \delta \left( \mathbb{E}_t[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \mathrm{+} \frac{4(n-k)L^2\eta}{1-2L\eta} \right)
-\end{array}
-\end{equation}.
-
-
-If $\mathbb{E}_t[F(\tilde{\omega}_s)\mathrm{-}F(\omega_\ast)] \le \zeta \mathbb{E}_t[F(\omega_0)\mathrm{-}F(\omega_\ast)]$ holds, then we obtain $\delta^s = \zeta$ according to Theorem \ref{Theorem_converge}, that is, $s=\frac{\ln \zeta}{\ln \delta}$. Therefore, the total  gradient complexity is 
-$\frac{\ln \zeta}{\ln \delta}m\mathrm{+}\left( \mathrm{-} \frac{\log\frac{\alpha}{2}}{2\epsilon} (\frac{\ln \zeta}{\ln \delta}+1)(\frac{\ln \zeta}{\ln \delta})\right)$ atomic gradient calculations with $\delta=\frac{\mu m \eta^2 (8Ln-8Lk+4Lnk)+nk}{  \mu m nk \eta (1-2\eta L)  }$. 
-
-
+$\mathbb{E}[F(\tilde{\omega}_{s\mathrm{+}1}) \mathrm{-} F(\omega_\ast)]  \le \delta^s \left(2\mathbb{E}[F(\tilde{\omega}_0)\mathrm{-}F(\omega_\ast)]\right)$, according to Theorem \ref{Theorem_converge}. If $\mathbb{E}[F(\tilde{\omega}_{s\mathrm{+}1}) \mathrm{-} F(\omega_\ast)]  \le \zeta$ holds, we obtain $s\ge\frac{1}{\ln \delta}\ln \frac{\zeta}{2(F(\tilde{\omega}_0)-F(\omega_\ast))}$ which can be denoted by $s=O(\ln \frac{1}{\zeta})$. Here, $\omega_\ast$ is the optimum of the loss function. The required atomic gradient calculations for the $s_{th}$ epoch is denoted by $G_\mathrm{s}$. We obtain $G_s = k \mathrm{+}m = \mathrm{-} \frac{s\log\frac{\alpha}{2}}{\epsilon}\mathrm{+}m$, which can be denoted by $O(\ln\frac{1}{\zeta})$ because of $s=O(\ln \frac{1}{\zeta})$. Thus, the total  gradient complexity is  denoted by 
+$O(\ln^2\frac{1}{\zeta})$. 
 \end{proof}
 
 

@@ -304,7 +304,7 @@ alpha$
 \begin_inset Text
 
 \begin_layout Plain Layout
-the level of significance
+the level of significance which is set 0.01.
 \end_layout
 
 \end_inset
@@ -463,12 +463,11 @@ status open
 
 $
 \backslash
+omega$ is a parameter, $
+\backslash
 omega_
 \backslash
-ast$ is the optimum.
- $
-\backslash
-omega$ is a parameter, and $
+ast$ is the optimum, and $
 \backslash
 tilde{
 \backslash

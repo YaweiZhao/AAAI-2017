@@ -304,7 +304,7 @@ alpha$
 \begin_inset Text
 
 \begin_layout Plain Layout
-the level of significance
+the level of significance which is set 0.01 in the paper.
 \end_layout
 
 \end_inset
@@ -670,13 +670,12 @@ gamma_t}$
 \begin_inset Text
 
 \begin_layout Plain Layout
-the update gradient 
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-, and $
+the update gradient, and $
 \backslash
 dot{
 \backslash
