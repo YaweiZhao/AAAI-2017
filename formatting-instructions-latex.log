@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  13 SEP 2016 00:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  13 SEP 2016 09:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -714,11 +714,6 @@ Underfull \hbox (badness 2073) in paragraph at lines 353--355
  []
 
 
-Underfull \hbox (badness 1337) in paragraph at lines 353--355
-\OT1/ptm/m/n/10 in-clud-ing ijcnn1, colon-cancer, duke-brease-cancer, a9a,
- []
-
-
 Underfull \hbox (badness 1371) in paragraph at lines 356--357
 \OML/cmm/m/it/10 l\OT1/cmr/m/n/10 2$\OT1/ptm/m/n/10 -regularised lo-gis-tic re-
 gres-sion tasks on the datasets:
@@ -753,13 +748,8 @@ inclusion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figure_a9a_rho.pdf): PDF i
 nclusion: multiple pdfs with page group included in a single page
->]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6 <./figure_mg_convergence.pdf> <./figure_cpusmall_convergence.pdf
+>] (./formatting-instructions-latex.bbl [6 <./figure_mg_convergence.pdf> <./fig
+ure_cpusmall_convergence.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figure_cpusmall_convergenc
 e.pdf): PDF inclusion: multiple pdfs with page group included in a single page
@@ -787,19 +777,18 @@ inclusion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figure_space-ga_rho.pdf): 
 PDF inclusion: multiple pdfs with page group included in a single page
->] (./formatting-instructions-latex.bbl) [7
+>]) [7
 
-]
-(./formatting-instructions-latex.aux)
+] (./formatting-instructions-latex.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4445 strings out of 493089
- 62573 string characters out of 6134842
- 140637 words of memory out of 5000000
- 7748 multiletter control sequences out of 15000+600000
+ 4444 strings out of 493089
+ 62544 string characters out of 6134842
+ 140629 words of memory out of 5000000
+ 7747 multiletter control sequences out of 15000+600000
  43994 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,15n,26p,1875b,372s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -825,7 +814,7 @@ ts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts
 onts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 /urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on formatting-instructions-latex.pdf (7 pages, 523293 bytes).
+Output written on formatting-instructions-latex.pdf (7 pages, 523160 bytes).
 PDF statistics:
  1196 PDF objects out of 1200 (max. 8388607)
  388 compressed objects within 4 object streams
