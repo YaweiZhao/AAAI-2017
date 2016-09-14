@@ -304,7 +304,7 @@ alpha$
 \begin_inset Text
 
 \begin_layout Plain Layout
-the level of significance which is set 0.01 in the paper.
+the level of significance which is set to be 0.01 in the paper.
 \end_layout
 
 \end_inset
@@ -463,15 +463,17 @@ status open
 
 $
 \backslash
-omega$ is a parameter, $
-\backslash
-omega_
-\backslash
-ast$ is the optimum, and $
+omega$ is a parameter, and $
 \backslash
 tilde{
 \backslash
-omega}$ is its snapshot 
+omega}$ is its snapshot.
+ $
+\backslash
+omega_
+\backslash
+ast$ is the optimum.
+ 
 \end_layout
 
 \end_inset
@@ -567,7 +569,7 @@ $j_{th}$
 
 \end_inset
 
- entry of of 
+ entry of 
 \begin_inset ERT
 status open
 
@@ -619,7 +621,7 @@ $j_{th}$
 
 \end_inset
 
- entry of of 
+ entry of 
 \begin_inset ERT
 status open
 

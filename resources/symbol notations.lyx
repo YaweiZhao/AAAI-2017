@@ -76,7 +76,7 @@
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="21" columns="2">
+<lyxtabular version="3" rows="22" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top" width="7cm">
@@ -463,15 +463,17 @@ status open
 
 $
 \backslash
-omega$ is a parameter, $
-\backslash
-omega_
-\backslash
-ast$ is the optimum, and $
+omega$ is a parameter, and $
 \backslash
 tilde{
 \backslash
-omega}$ is its snapshot 
+omega}$ is its snapshot.
+ $
+\backslash
+omega_
+\backslash
+ast$ is the optimum.
+ 
 \end_layout
 
 \end_inset
@@ -567,7 +569,7 @@ $j_{th}$
 
 \end_inset
 
- entry of of 
+ entry of 
 \begin_inset ERT
 status open
 
@@ -619,7 +621,7 @@ $j_{th}$
 
 \end_inset
 
- entry of of 
+ entry of 
 \begin_inset ERT
 status open
 
@@ -834,6 +836,48 @@ status open
 \begin_layout Plain Layout
 
 $2$-norm of a vector
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mathbb{E}$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+the expectation
 \end_layout
 
 \end_inset
